@@ -1,0 +1,34 @@
+version: '3'
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql-server
+    command: --default-authentication-plugin=mysql_native_password
+    working_dir: /application
+    volumes:
+      - .:/application
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=wordpress
+      - MYSQL_USER=wordpress
+      - MYSQL_PASSWORD=wordpress
+    ports:
+      - "8082:3306"
+  website:
+    container_name: wordpress
+    image: checkout/wordpress
+    build:
+      context: ./apache2
+    volumes:
+      - ./www:/var/www/html/
+      - ./apache2/sites-available:/etc/apache2/sites-available
+    ports:
+      - 80:80
+    depends_on:
+      - mysql
+    environment:
+      WORDPRESS_DB_HOST: mysql
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DB_NAME: wordpress
