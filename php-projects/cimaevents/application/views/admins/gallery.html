@@ -1,0 +1,128 @@
+{include subHeader.html}
+
+<!-- Content Start now -->
+<div class="content" style="margin: 0 0 100px 0; min-height: 400px; width: 100%;">
+
+    <div class="row pannel">
+
+        <div class="panel-group">
+            <div class="panel panel-default">
+                <div class="panel-body">
+
+                    <div class="col-sm-12" style="border: solid 1px #aaa">
+                        <div class="col-sm-6">
+                            <h1>Gallery Control</h1>
+                        </div>
+                        <div class="col-sm-6" style="padding: 20px; text-align: right;">
+                            <a href="{echo DIR_PATH}/admins/createGallery" class="btn btn-success">Create</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">All Gallery</div>
+                <div class="panel-body">
+
+                    <div class="col-sm-12" style="border: solid 1px #aaa; padding: 30px 0 0 0;">
+                        <div class="table-responsive">
+                            <table class="table">
+                                {if isset($galleries)}
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Category</th>
+                                        <th>Author</th>
+                                        <th>Visibility</th>
+                                        <th>Image</th>
+                                        <th>Description</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {foreach $gallery in $galleries}
+                                    <tr>
+                                        <td>{echo $gallery->name}</td>
+                                        <td>{echo $gallery->category}</td>
+                                        <td>{echo $gallery->author}</td>
+                                        <td>{echo $gallery->visibility}</td>
+                                        <td>{echo $gallery->image}</td>
+                                        <td>{echo $gallery->description}</td>
+                                        <td>
+                                            <a href="{echo DIR_PATH}/admins/deleteGallery/{echo $gallery->id}" class="btn btn-danger">Delete</a>
+                                        </td>
+                                    </tr>
+                                    {/foreach}
+                                </tbody>
+                                {/if}
+                                {else}
+                                <thead>
+                                    <tr>
+                                        <th>No Data</th>
+                                    </tr>
+                                </thead>
+                                {/else}
+                            </table>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="panel panel-default">
+                <div class="panel-heading">Deleted Gallery</div>
+                <div class="panel-body">
+
+                    <div class="col-sm-12" style="border: solid 1px #aaa; padding: 30px 0 0 0;">
+                        <div class="table-responsive">
+                            <table class="table">
+                                {if isset($deletedGalleries)}
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Category</th>
+                                        <th>Author</th>
+                                        <th>Visibility</th>
+                                        <th>Image</th>
+                                        <th>Description</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {foreach $gallery in $deletedGalleries}
+                                    <tr>
+                                        <td>{echo $gallery->name}</td>
+                                        <td>{echo $gallery->category}</td>
+                                        <td>{echo $gallery->author}</td>
+                                        <td>{echo $gallery->visibility}</td>
+                                        <td>{echo $gallery->image}</td>
+                                        <td>{echo $gallery->description}</td>
+                                        <td>
+                                            <a href="{echo DIR_PATH}/admins/undeleteGallery/{echo $gallery->id}" class="btn btn-danger">Undelete</a>
+                                        </td>
+                                    </tr>
+                                    {/foreach}
+                                </tbody>
+                                {/if}
+                                {else}
+                                <thead>
+                                    <tr>
+                                        <th>No Data</th>
+                                    </tr>
+                                </thead>
+                                {/else}
+                            </table>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>  <!-- Content End here -->
+        
+{include subFooter.html}

@@ -1,0 +1,106 @@
+{include subHeader.html}
+
+<!-- Content Start now -->
+<div class="content" style="margin: 0 0 100px 0; min-height: 400px; width: 100%;">
+    
+    <div class="row pannel">
+
+        <div class="row" style="border: solid 1px #aaa; margin: 0 0 30px 0;">
+            <div class="col-sm-6">
+                <h1>Create Product</h1>
+            </div>
+            <div class="col-sm-6" style="padding: 20px; text-align: right;">
+                <a href="{echo DIR_PATH}/admins/product" class="btn btn-success">Product</a>
+            </div>
+        </div>
+        
+        {if isset($file_error)}
+            <div class="alert alert-warning">
+                {echo $file_error}
+            </div>
+        {/if}
+        
+        {if isset($success)}
+            <div class="alert alert-warning">
+              <strong>Success!</strong> Product created successfully.
+            </div>
+        {/if}
+
+        <div class="row">
+
+            <form method="post" enctype="multipart/form-data">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <div class="row">
+                            <div class="col-sm-6" style="padding: 0px;">
+                                <label for="name">Product Name:</label>
+                                <input type="text" name="name" />
+                                {echo Shared\Markup::errors($errors, "name")}
+                            </div>
+                            <div class="col-sm-6" style="padding: 0px;">
+                                <label for="catalog">Product Catalog:</label>
+                                <input type="text" name="catalog" />
+                                {echo Shared\Markup::errors($errors, "catalog")}
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <label for="description">Description</label>
+                        <textarea name="description" style="height: 100px; width: 100%"></textarea>
+                        {echo Shared\Markup::errors($errors, "description")}
+                    </li>
+                    <li class="list-group-item">
+                        <div class="row">
+                            <div class="col-sm-6" style="padding: 0px">
+                                <label for="price">Price:</label>
+                                <input type="text" name="price" />
+                                {echo Shared\Markup::errors($errors, "price")}
+                            </div>
+                            <div class="col-sm-6" style="padding: 0px">
+                                <label for="qty">Quantity:</label>
+                                <input type="text" name="qty" />
+                                {echo Shared\Markup::errors($errors, "qty")}
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <label for="type">Product Type:</label>
+                        <select name="type">
+                            <option value="product">Product</option>
+                            <option value="service">Service</option>
+                        </select>
+                        {echo Shared\Markup::errors($errors, "type")}
+                    </li>
+                    <li class="list-group-item">
+                        <label for="visibility">Product Visibility:</label>
+                        <select name="visibility">
+                            <option value="rental">Rental</option>
+                            <option value="purchase">purchase</option>
+                            <option value="popular">Popular</option>
+                            <option value="coming soon">Coming Soon</option>
+                            <option value="search">Search</option>
+                        </select>
+                        {echo Shared\Markup::errors($errors, "visibility")}
+                    </li>
+                    <li class="list-group-item">
+                        <label for="image">Product Image:</label>
+                        <input type="file" name="image" />
+                        {echo Shared\Markup::errors($errors, "image")}
+                    </li>
+                    <li class="list-group-item">
+                        <div class="row" style="padding: 5px 0 5px 0; text-align: right;">
+                            <input type="submit" name="create" value="Save" class="btn btn-danger" />
+                        </div>
+                    </li>
+                </ul>
+            </form>
+
+        </div>
+
+        
+    </div> <!-- Pannel End here -->
+
+
+</div>  <!-- Content End here -->
+        
+{include subFooter.html}

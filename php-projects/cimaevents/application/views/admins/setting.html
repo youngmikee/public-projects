@@ -1,0 +1,183 @@
+{include subHeader.html}
+
+<!-- Content Start now -->
+<div class="content" style="margin: 0 0 100px 0; min-height: 400px; width: 100%;">
+
+    <div class="row pannel">
+
+        <div class="col-sm-12" style="border: solid 1px #aaa">
+            <h1>Settings</h1>
+        </div>
+
+        <div class="col-sm-12" style="padding: 30px 0 0 0;">
+
+            <form role="form" class="col-sm-12" style="border: solid 1px #aaa;">
+
+                <table class="table">
+
+                    <thead>
+                        <tr>
+                            <th class="zero">Create Account</th>
+                        </tr>
+                        <tr>
+                            <th>Username:</th>
+                            <th>Email:</th>
+                            <th>Password:</th>
+                            <th>Confirm Password:</th>
+                            <th>Action:</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>
+                                <input type="text" name="username" class="col-sm-12 form-control"/>
+                            </td>
+                            <td>
+                                <input type="email" name="email" class="col-sm-12 form-control"/>
+                            </td>
+                            <td>
+                                <input type="password" name="password" class="col-sm-12 form-control"/>
+                            </td>
+                            <td>
+                                <input type="password" name="cpassword" class="col-sm-12 form-control"/>
+                            </td>
+                            <td>
+                                <input type="submit" class="btn btn-success" name="submit-catalog" value="Create" />
+                            </td>
+                        </tr>
+                    </tbody>
+
+                </table>
+
+            </form> <!-- Form End here -->
+
+            <div class="col-sm-12" style="border: solid 1px #aaa; margin: 50px 0 0 0;">
+        
+                <h2 style="margin: 20px 0 30px 0;">General Settings</h2>
+            
+                   
+                <table class="table">
+
+                    <thead>
+                        <tr>
+                            <th>Name:</th>
+                            <th></th>
+                            <th>Default:</th>
+                            <th>Action:</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <form role="form">
+                        <tr>
+                            <td><h4>Country / Region:</h4></td>
+                            <td><input type="text" id="country" class="form-control" name="country"></td>
+                            <td><h4><small>United Kingdom</small></h4></td>
+                            <td><button class="btn btn-success">Save</button></td>
+                        </tr>
+                        </form>
+                        <form role="form">
+                        <tr>
+                            <td><h4>Language:</h4></td>
+                            <td><input type="text" id="country" class="form-control" name="country"></td>
+                            <td><h4><small>English</small></h4></td>
+                            <td><button class="btn btn-success">Save</button></td>
+                        </tr>
+                        </form>
+                        <form role="form">
+                        <tr>
+                            <td><h4>Currency:</h4></td>
+                            <td>
+                                <select name="currency" class="form-control" id="currency">
+                                    <option value="&#36;">USD</option>
+                                    <option value="&#163;">GBP</option>
+                                    <option value="&#8364;">EURO</option>
+                                </select>
+                            </td>
+                            <td><h4><small>USD</small></h4></td>
+                            <td><button class="btn btn-success">Save</button></td>
+                        </tr>
+                        </form>
+                        <form role="form">
+                        <tr>
+                            <td><h4>Free Delivery On Purchase above:</h4></td>
+                            <td><input type="text" id="country" class="form-control" name="country"></td>
+                            <td><h4><small>$20</small></h4></td>
+                            <td><button class="btn btn-success">Save</button></td>
+                        </tr>
+                        </form>
+                    </tbody>
+
+                </table>
+                
+            </div>
+            
+            <div class="col-sm-12" style="border: solid 1px #aaa; margin: 50px 0 0 0;">
+                
+                <h2 style="margin: 20px 0 30px 0;">Homepage Settings</h2>
+            
+                   
+                <table class="table">
+
+                    <thead>
+                        <tr>
+                            <th>Name:</th>
+                            <th></th>
+                            <th>Default:</th>
+                            <th>Action:</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <form role="form">
+                        <tr>
+                            <td><h4>Popular:</h4></td>
+                            <td>
+                                <select name="currency" class="form-control" id="currency">
+                                    <option value="0">On</option>
+                                    <option value="1">Off</option>
+                                </select>
+                            </td>
+                            <td><h4><small>On</small></h4></td>
+                            <td><button class="btn btn-success">Save</button></td>
+                        </tr>
+                        </form>
+                        <form role="form">
+                        <tr>
+                            <td><h4>Feature:</h4></td>
+                            <td>
+                                <select name="currency" class="form-control" id="currency">
+                                    <option value="0">On</option>
+                                    <option value="1">Off</option>
+                                </select>
+                            </td>
+                            <td><h4><small>On</small></h4></td>
+                            <td><button class="btn btn-success">Save</button></td>
+                        </tr>
+                        </form>
+                        <form role="form">
+                        <tr>
+                            <td><h4>Sales:</h4></td>
+                            <td>
+                                <select name="currency" class="form-control" id="currency">
+                                    <option value="0">On</option>
+                                    <option value="1">Off</option>
+                                </select>
+                            </td>
+                            <td><h4><small>On</small></h4></td>
+                            <td><button class="btn btn-success">Save</button></td>
+                        </tr>
+                        </form>
+                    </tbody>
+
+                </table>
+                
+            </div>
+
+        </div>
+
+    </div>
+
+
+</div>  <!-- Content End here -->
+        
+{include subFooter.html}

@@ -1,0 +1,82 @@
+<!-- Content Start here -->
+<div class="content" style="min-height: 900px;">
+
+    <div class="welcome">
+
+        <div class="row">
+            <h5>9:30AM - 6:30PM FREE DELIVERY </h5>
+
+            <p>We provide services for all your event needs, such as WEDDINGS, KIDS PARTIES, BIRTHDAY PARTIES,
+            CHRISTENING AND OUTDOOR EVENTS.</p>
+
+            <p>Take advantage of our Cheap, Quality and Professional Party Hosts Servers and Cleaning Services.</p>
+
+        </div>
+
+    </div>  <!-- Content Welcome End here -->
+
+    <div class="url">
+
+        <div class="row">
+
+            <ul class="breadcrumb">
+                <li><a href="#">Home</a></li>
+                <li><a href='#' class="active">Gallery</a></li>
+            </ul>
+
+        </div>
+
+    </div>
+
+    <div class="row">
+        
+        <div class="col-sm-12">
+
+            <!-- Grid start here -->
+            <div class="gallery">
+
+                <div class="row">
+
+                    <div class="left col-sm-6">
+
+                        <ol class="breadcrumb">
+                            <li><a href="#"><span class="glyphicon glyphicon-th-large"></span></a></li>
+                            <li><a href='#' class="active"><span class="glyphicon glyphicon-th"></span></a></li>
+                        </ol>
+
+                    </div>
+
+                    <div class="right col-sm-6">
+
+                        <ol class="breadcrumb">
+                            <li><a href="#" class="active">1</a></li>
+                            <li><a href='#'>23</a></li>
+                        </ol>
+
+                    </div>
+
+                </div>
+
+                <div class="row">
+                {if isset($galleries)}
+                    <ul class="col-sm-12 list-group">
+                    {foreach $gallery in $galleries}
+                        <li class="col-sm-4 list-group-item">
+
+                            <a href="{echo DIR_PATH}/gallery/photo/{echo $gallery->image}" class="thumbnail" target="_blank">
+                                <img src="{echo DIR_PATH}/gallery/photo/{echo $gallery->image}" class="img-rounded" alt="Cinque Terre" alt="product name"/>
+                            </a>
+                        
+                        </li>
+                    {/foreach}
+                    </ul>
+                {/if}
+                </div>
+
+            </div>  <!-- Products end here -->
+
+        </div>
+
+    </div>
+
+</div> <!-- Content End here -->

@@ -1,0 +1,53 @@
+<!-- Content Start now -->
+<div class="content" style="margin: 0 0 100px 0; height: 400px; width: 100%;">
+
+    <div class="row">        
+
+        <form method="post" class="col-sm-4" style="padding: 0 0 30px 0;">
+
+            <div class="row">
+                <h1 style="padding: 15px;">Login:</h1>
+                {if isset($login_error)}
+                    <div class="alert alert-warning">
+                        {echo $login_error}
+                    </div>
+                {/if}
+                {if isset($email_error)}
+                    <div class="alert alert-warning">
+                        {echo $email_error}
+                    </div>
+                {/if}
+                {if isset($password_error)}
+                    <div class="alert alert-warning">
+                        {echo $password_error}
+                    </div>
+                {/if}
+            </div>
+
+            <div class="row" style="padding: 10px 0 10px 0;">
+                <label class="col-sm-4">Email:</label>
+                <input type="email" name="email" class="col-sm-8" />
+            </div>
+            <div class="row" style="padding: 10px 0 10px 0;">
+                <label class="col-sm-4">Password:</label>
+                <input type="password" name="password" class="col-sm-8" />
+            </div>
+            <div class="row" style="padding: 10px 0 10px 0;">
+                <div class="col-sm-8"></div>
+                <input type="submit" name="login" value="login" class="col-sm-4 btn btn-danger" />
+            </div>
+
+        </form>
+
+        <div class="row" style="padding: 0 0 10px 0;"> 
+            <a href="#" class="col-sm-12" style="border-top: solid 1px #aaa;">Forgotten Password</a>
+        </div>
+        <div class="row" style="padding: 10px 0 10px 0;">
+            <div class="col-sm-8"></div>
+            <a href="{echo DIR_PATH}/admins/register" class="col-sm-4 btn btn-success" >Register</a>
+        </div>
+        
+    </div>
+
+</div>  <!-- Content End here -->
+        

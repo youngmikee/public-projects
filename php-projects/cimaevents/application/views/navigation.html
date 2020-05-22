@@ -1,0 +1,85 @@
+    <!-- The Main Header Start here -->
+    <div class="header row">
+
+        <!-- Main Menu Top Section Start here -->
+        <div class="top col-sm-12">
+
+            <!-- Top Row start -->
+            <div class="row">
+
+                <div class="main-logo col-sm-6">
+                    <a href="{echo DIR_PATH}/">
+                        <img src="{echo DIR_PATH}/resources/images/logo.png" alt="Cima Events"/>
+                    </a>
+                </div>
+
+                <!-- Contact Number Section -->
+                <div class="contactNumber col-sm-6">
+
+                    <h1>02037232507</h1>
+                    <h5><span class="glyphicon glyphicon-phone-alt"></span> Call us now to get a free Quote</h5>
+
+                </div>  <!-- End Contact number -->
+
+            </div>  <!-- Top Row End -->
+
+        </div> <!-- Main Menu Top Section End here -->
+
+        <!-- Main Menu Bottom Section Start here -->
+        <div class="bottom col-sm-12">
+
+            <!-- Bottom Row start -->
+            <div class="row">
+
+                <!-- Main Menu Section Start here -->
+                <div class="mainMenu col-sm-10">
+
+                    <!-- Nav Start here -->
+                    <div class="nav col-sm-12">
+
+                        <ul>
+
+                            <li><a href="{echo DIR_PATH}" {if isset($controller) and $controller == "home"} {echo "class='active'"} {/if}>Home</a></li>
+
+                            <li><a href="{echo DIR_PATH}/rental" {if isset($controller) and $controller == "rental"} {echo "class='active'"} {/if}>Rental</a></li>
+
+                            <li><a href="{echo DIR_PATH}/purchase" {if isset($controller) and $controller == "purchase"} {echo "class='active'"} {/if}>Quick Purchase</a></li>
+
+                            <li><a href="{echo DIR_PATH}/wedding" {if isset($controller) and $controller == "wedding"} {echo "class='active'"} {/if}>Wedding Service</a></li>
+
+                            <li><a href="{echo DIR_PATH}/cleaning" {if isset($controller) and $controller == "cleaning"} {echo "class='active'"} {/if}>Cleaning Service</a></li>
+
+                            <li><a href="{echo DIR_PATH}/gallery" {if isset($controller) and $controller == "gallery"} {echo "class='active'"} {/if}>Gallery</a></li>
+
+                        </ul>
+
+                    </div>  <!-- Nav End here -->
+
+                </div>  <!-- Main Menu Section End here -->
+
+                <!-- Basket section start here -->
+                <div class="basket col-sm-2">
+
+                    <ul>
+
+                        <li>
+                            <button class="helpBtn">
+                                <span class="glyphicon glyphicon-exclamation-sign"></span>
+                            </button>
+                        </li>
+
+                        <li>
+                            <button class="shoppingBtn">
+                                <span class="glyphicon glyphicon-shopping-cart"></span>
+                            </button>
+                        </li>
+
+                    </ul>
+
+                </div>  <!-- Basket Section End here -->
+
+            </div> <!-- Bottom Row Ending -->
+
+        </div>  <!-- Main Menu Bottom Section End here -->
+
+    </div> <!-- Main Header End here -->

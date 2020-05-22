@@ -1,0 +1,77 @@
+<!-- Content Start now -->
+<div class="content" style="margin: 0 0 100px 0; height: 400px; width: 100%;">
+    
+    <div class="row">
+
+        <div class="row">
+            <h1 style="padding: 15px">Register:</h1>
+            {if isset($success)}
+                Your account has been created!
+            {/if}
+        </div>
+
+        <form method="post" class="col-sm-4" style="padding: 0 0 30px 0;">
+
+            <div class="row" style="padding: 10px 0 10px 0;">
+                <label class="col-sm-4">First name:</label>
+                <input type="text" name="first" class="col-sm-8" />
+                {if isset($first_error)}
+
+                    <span class="error">
+                        {echo $first_error}
+                    </span>
+
+                {/if}
+            </div>
+
+            <div class="row" style="padding: 10px 0 10px 0;">
+                <label class="col-sm-4">Last name:</label>
+                <input type="text" name="last" class="col-sm-8" />
+                {if isset($last_error)}
+
+                    <span class="error">
+                        {echo $last_error}
+                    </span>
+
+                {/if}
+            </div>
+            <div class="row" style="padding: 10px 0 10px 0;">
+                <label class="col-sm-4">Email:</label>
+                <input type="email" name="email" class="col-sm-8" />
+                {if isset($email_error)}
+
+                    <span class="error">
+                        {echo $email_error}
+                    </span>
+
+                {/if}
+            </div>
+            <div class="row" style="padding: 10px 0 10px 0;">
+                <label class="col-sm-4">Password:</label>
+                <input type="password" name="password" class="col-sm-8" />
+                {if isset($password_error)}
+
+                    <span class="error">
+                        {echo $password_error}
+                    </span>
+
+                {/if}
+            </div>
+            <div class="row" style="padding: 10px 0 10px 0;">
+                <div class="col-sm-8"></div>
+                <input type="submit" name="register" value="register" class="col-sm-4" />
+            </div>
+
+        </form>
+
+        <div class="row" style="padding: 0 0 10px 0;"> 
+        </div>
+        <div class="row" style="padding: 10px 0 10px 0;">
+            <div class="col-sm-8"></div>
+            <a href="{echo DIR_PATH}/admin/login" class="col-sm-4" style="border: solid 1px #aaa; text-align: center; color: #525252;">Login</a>
+        </div>
+        
+    </div>
+
+</div>  <!-- Content End here -->
+        

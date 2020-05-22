@@ -1,0 +1,143 @@
+
+<!-- Content Start here -->
+<div class="content">
+
+    <div class="url">
+
+        <div class="row">
+
+            <ul class="breadcrumb">
+                <li><a href="{echo DIR_PATH}">Home</a></li>
+                <li>
+                    <a href="{echo DIR_PATH}/{if isset($controller)}{echo strtolower($controller)}{/if}">
+                        {if isset($controller)}
+                            {echo $controller}
+                        {/if}
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="active">
+                        {if isset($product)}
+                            {echo $product->name}
+                        {/if}
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+
+    </div>
+
+        <!-- Products start here -->
+        <div class="product">
+
+            <div class="row">
+
+                <ul class="col-sm-12">
+
+                    <li class="col-sm-5">
+
+                        <div class="box list-group">
+
+                            <div class="img list-group-item">
+                                <img src="{echo DIR_PATH}/products/photo/{echo str_replace(' ', '_', $product->name)}.$product->image" alt="product name" style="width: 100%;"/>
+                            </div>
+
+                        </div>
+
+                    </li>
+
+                    <li class="col-sm-7">
+                        {if isset($product)}
+                        
+                        <form method="post" id="basketForm" action="{echo DIR_PATH}/{echo lcfirst($controller)}/addToBasket">
+                            
+                            <input type="hidden" name="id" value="{echo $product->id}" />
+
+                            <ul>
+                                <li class="row" style="padding: 0px;">
+                                    <div class="col-sm-12" style="padding: 0px;">
+                                         <h3 style="color: #262626; font-weight: 600;">{echo $product->name}</h3>
+                                    </div>
+                                    <div class="col-sm-12" style="padding: 0px;">
+                                        Rent pre unit: <h3><b>&pound;{echo $product->price}</b></h3>
+                                    </div>
+                                </li>
+                                <li>
+                                    <p>
+                                        {echo $product->description}
+                                    </p>
+                                </li>
+                                <li class="col-sm-12" style="padding-left: 0px;">
+                                    <div class="col-sm-2" style="padding-left: 0px;">
+                                        <label for="quantity">Quantity</label>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <!--<input type='text' name="qty" id="quantity" style="width: 99%;" />-->
+                                        <select name="qty" id="quantity" style="width: 99%;">
+                                            
+                                            {script for($x=1; $x <= $product->qty; $x++):}
+                                            <option value="{echo $x}">{echo $x}</option>
+                                            {script endfor;}
+                                         
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-8 message">
+                                        <div class="alert alert-warning error">
+                                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                            Quantity is required.
+                                        </div>
+                                        
+                                        <div class="alert alert-warning success">
+                                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                            Added to basket.
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="col-sm-12" style="padding-left: 0px;">
+                                    <div class="col-sm-12" style="padding-left: 0px;">
+                                        <div class="row alert alert-success">
+                                            <div class="col-sm-4 basketBtn" style="padding: 0px;">
+                                                <input id="basketBtn" type="submit" class="btn btn-success" name="basket" value="Add to Basket"/>
+                                            </div>
+                                            <div class="basketBtns">
+                                            <!--    <div class="col-sm-4" style="padding-left: 0px;">
+                                                    <a data-toggle="modal" id="viewBasketBtn" href="#basket" class="btn btn-primary" >View Basket</a>
+                                                </div> -->
+                                                <div class="col-sm-4" style="padding-left: 0px;">
+                                                    <a href="{echo DIR_PATH}/{echo lcfirst($controller)}" class="btn btn-danger">Continue Shopping</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            
+                        </form>
+                        
+                        {/if}
+                        
+                        {else}
+                        
+                            <table class="col-sm-12 table">
+                                <thead>
+                                    <tr>
+                                        <td>
+                                            <h2>
+                                                No data
+                                            </h2>
+                                        </td>
+                                    </tr>
+                                </thead>
+                            </table>
+                        
+                        {/else}
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>  <!-- Products end here -->
+
+</div> <!-- Content End here -->

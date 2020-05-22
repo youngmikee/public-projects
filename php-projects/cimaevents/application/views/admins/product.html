@@ -1,0 +1,203 @@
+{include subHeader.html}
+
+<!-- Content Start now -->
+<div class="content" style="margin: 0 0 100px 0; min-height: 400px; width: 100%;">
+
+    <div class="row pannel">
+
+        <div class="panel-group">
+            <div class="panel panel-default">
+                <div class="panel-body">
+
+                    <div class="col-sm-12" style="border: solid 1px #aaa">
+                        <div class="col-sm-6">
+                            <h1>Product Control</h1>
+                        </div>
+                        <div class="col-sm-6" style="padding: 20px; text-align: right;">
+                            <a href="{echo DIR_PATH}/admins/createProduct" class="btn btn-success">Create</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading"><h3>All Products</h3></div>
+                <div class="panel-body">
+
+                    <div class="col-sm-12" style="border: solid 1px #aaa; padding: 30px 0 0 0;">
+                        <div class="table-responsive">
+                            <table class="table">
+                                {if isset($products)}
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Catalog</th>
+                                        <th>Qty</th>
+                                        <th>Type</th>
+                                        <th>Visibility</th>
+                                        <th>Price</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {foreach $product in $products}
+                                    <tr>
+                                        <td>{echo $product->name}</td>
+                                        <td>{echo $product->catalog}</td>
+                                        <td>{echo $product->qty}</td>
+                                        <td>{echo $product->type}</td>
+                                        <td>{echo $product->visibility}</td>
+                                        <td>&pound;{echo $product->price}</td>
+                                        <td>
+                                            <button data-toggle="collapse" data-target="#editProduct{echo $product->id}" class="btn btn-primary editBtn">Edit</button>
+                                            <a href="{echo DIR_PATH}/admins/deleteProduct/{echo $product->id}" class="btn btn-danger">Delete</a>
+                                        </td>
+                                    </tr>
+                                    <tr id="editProduct{echo $product->id}" class="collapse">
+                                        <form role="form" action="{echo DIR_PATH}/admins/editProduct" method="post">
+                                            <td>
+                                                <input type="hidden" name="id" value="{echo $product->id}" />
+                                                <input type="text" name="name" value="{echo $product->name}" />
+                                            </td>
+                                            <td>
+                                                <input type="text" name="catalog" class="col-sm-8" value="{echo $product->catalog}" />
+                                            </td>
+                                            <td>
+                                                <input type="text" name="qty" class="col-sm-6"  value="{echo $product->qty}" />
+                                            </td>
+                                            <td>
+                                                <select name="type">
+                                                    <option {echo($product->type == 'product')? 'selected' : ''} value="product">Product</option>
+                                                    <option {echo($product->type == 'service')? 'selected' : ''} value="service">Service</option>
+                                                </select>
+                                            </td>
+                                            <td>
+                                                <select name="visibility">
+                                                    <option {echo($product->visibility == 'rental')? 'selected' : ''} value="rental">Rental</option>
+                                                    <option {echo($product->visibility == 'purchase')? 'selected' : ''} value="purchase">purchase</option>
+                                                    <option {echo($product->visibility == 'popular')? 'selected' : ''} value="popular">Popular</option>
+                                                    <option {echo($product->visibility == 'coming soon')? 'selected' : ''} value="coming soon">Coming Soon</option>
+                                                    <option {echo($product->visibility == 'search')? 'selected' : ''} value="search">Search</option>
+                                                </select>
+                                            </td>
+                                            <td>
+                                                <input type="text" name="price" class="col-sm-6" value="{echo $product->price}" />
+                                            </td>
+                                            <td>
+                                                <button type="button" class="close closebtn" data-toggle="collapse" data-target="#editProduct{echo $product->id}">&times;</button>
+                                                <input type="submit" name="editProduct" value="Save" class="btn btn-success editSaveBtn" />
+                                            </td>
+                                        </form>
+                                    </tr>
+                                    {/foreach}
+                                </tbody>
+                                {/if}
+                                {else}
+                                <thead>
+                                    <tr>
+                                        <th>No Data</th>
+                                    </tr>
+                                </thead>
+                                {/else}
+                            </table>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">Deleted Products</div>
+                <div class="panel-body">
+
+                    <div class="col-sm-12" style="border: solid 1px #aaa; padding: 30px 0 0 0;">
+                        <div class="table-responsive">
+                            <table class="table">
+                                {if isset($deletedProducts)}
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Catalog</th>
+                                        <th>Qty</th>
+                                        <th>Type</th>
+                                        <th>Visibility</th>
+                                        <th>Price</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {foreach $product in $deletedProducts}
+                                    <tr>
+                                        <td>{echo $product->name}</td>
+                                        <td>{echo $product->catalog}</td>
+                                        <td>{echo $product->qty}</td>
+                                        <td>{echo $product->type}</td>
+                                        <td>{echo $product->visibility}</td>
+                                        <td>&pound;{echo $product->price}</td>
+                                        <td>
+                                            <button data-toggle="collapse" data-target="#editProduct{echo $product->id}" class="btn btn-primary editBtn">Edit</button>
+                                            <a href="{echo DIR_PATH}/admins/undeleteProduct/{echo $product->id}" class="btn btn-danger">Undelete</a>
+                                        </td>
+                                    </tr>
+                                    <tr id="editProduct{echo $product->id}" class="collapse">
+                                        <form role="form" action="{echo DIR_PATH}/admins/editProduct" method="post">
+                                            <td>
+                                                <input type="hidden" name="id" value="{echo $product->id}" />
+                                                <input type="text" name="name" value="{echo $product->name}" />
+                                            </td>
+                                            <td>
+                                                <input type="text" name="catalog" class="col-sm-8" value="{echo $product->catalog}" />
+                                            </td>
+                                            <td>
+                                                <input type="text" name="qty" class="col-sm-6"  value="{echo $product->qty}" />
+                                            </td>
+                                            <td>
+                                                <select name="type">
+                                                    <option {echo($product->type == 'product')? 'selected' : ''} value="product">Product</option>
+                                                    <option {echo($product->type == 'service')? 'selected' : ''} value="service">Service</option>
+                                                </select>
+                                            </td>
+                                            <td>
+                                                <select name="visibility">
+                                                    <option {echo($product->visibility == 'rental')? 'selected' : ''} value="rental">Rental</option>
+                                                    <option {echo($product->visibility == 'purchase')? 'selected' : ''} value="purchase">purchase</option>
+                                                    <option {echo($product->visibility == 'popular')? 'selected' : ''} value="popular">Popular</option>
+                                                    <option {echo($product->visibility == 'coming soon')? 'selected' : ''} value="coming soon">Coming Soon</option>
+                                                    <option {echo($product->visibility == 'search')? 'selected' : ''} value="search">Search</option>
+                                                </select>
+                                            </td>
+                                            <td>
+                                                <input type="text" name="price" class="col-sm-6" value="{echo $product->price}" />
+                                            </td>
+                                            <td>
+                                                <button type="button" class="closebtn" data-toggle="collapse" data-target="#editProduct{echo $product->id}">&times;</button>
+                                                <input type="submit" name="editProduct" value="Save" class="btn btn-success editSaveBtn" />
+                                            </td>
+
+                                        </form>
+                                    </tr>
+                                    {/foreach}
+                                </tbody>
+                                {/if}
+                                {else}
+                                <thead>
+                                    <tr>
+                                        <th>No Data</th>
+                                    </tr>
+                                </thead>
+                                {/else}
+                            </table>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>  <!-- Content End here -->
+        
+{include subFooter.html}

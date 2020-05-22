@@ -1,0 +1,81 @@
+<!-- Content Start now -->
+<div class="content" style="margin: 0 0 100px 0; min-height: 400px; width: 100%;">
+    
+    <div class="row">
+
+        <div class="row">
+            <h1 style="padding: 15px">Register:</h1>
+            {if isset($success)}
+                <div class="alert alert-warning">
+                  <strong>Success!</strong> Your account has been created. <a href="{echo DIR_PATH}/admins/login">login</a>
+                </div>
+            {/if}
+        </div>
+
+        <form method="post" class="col-sm-6" style="padding: 0 0 30px 0;">
+
+            <div class="row" style="padding: 10px 0 10px 0;">
+                <label class="col-sm-4">Amin Number:</label>
+                <input type="text" name="adminNumber" class="col-sm-8" />
+                {if isset($error_adminNumber)}
+                    <div class="alert alert-warning">
+                        {echo $error_adminNumber}
+                    </div>
+                {/if}
+            </div>
+            
+            <div class="row" style="padding: 10px 0 10px 0;">
+                <label class="col-sm-4">First name:</label>
+                <input type="text" name="first" class="col-sm-8" />
+                {if isset($errors["first"])}
+                    <div class="alert alert-warning">
+                        {echo Shared\Markup::errors($errors,"first")}
+                    </div>
+                {/if}
+            </div>
+
+            <div class="row" style="padding: 10px 0 10px 0;">
+                <label class="col-sm-4">Last name:</label>
+                <input type="text" name="last" class="col-sm-8" />
+                {if isset($errors["last"])}
+                    <div class="alert alert-warning">
+                        {echo Shared\Markup::errors($errors, "last")}
+                    </div>
+                {/if}
+            </div>
+            <div class="row" style="padding: 10px 0 10px 0;">
+                <label class="col-sm-4">Email:</label>
+                <input type="email" name="email" class="col-sm-8" />
+                {if isset($errors["email"])}
+                    <div class="alert alert-warning">
+                        {echo Shared\Markup::errors($errors, "email")}
+                    </div>
+                {/if}
+            </div>
+            <div class="row" style="padding: 10px 0 10px 0;">
+                <label class="col-sm-4">Password:</label>
+                <input type="password" name="password" class="col-sm-8" />
+                {if isset($errors["password"])}
+                    <div class="alert alert-warning">
+                        {echo Shared\Markup::errors($errors, "password")}
+                    </div>
+                {/if}
+            </div>
+            <div class="row" style="padding: 10px 0 10px 0;">
+                <div class="col-sm-8"></div>
+                <input type="submit" name="register" value="register" class="col-sm-4 btn btn-success" />
+            </div>
+
+        </form>
+
+        <div class="row" style="padding: 0 0 10px 0;"> 
+        </div>
+        <div class="row" style="padding: 10px 0 10px 0;">
+            <div class="col-sm-8"></div>
+            <a href="{echo DIR_PATH}/admins/login" class="col-sm-4 btn btn-danger">Login</a>
+        </div>
+        
+    </div>
+
+</div>  <!-- Content End here -->
+        

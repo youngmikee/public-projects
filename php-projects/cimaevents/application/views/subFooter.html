@@ -1,0 +1,445 @@
+            <!-- Main Footer Start here -->
+            <div class="footer">
+
+                <!-- Footer top start -->
+                <div class="top">                
+
+                    <!-- Footer Row start -->
+                    <div class="row">
+
+                        <ul class="col-sm-12">
+
+                            <li class="col-sm-4">
+
+                                <h4>ABOUT STORE</h4>
+
+                                <p>
+                                    <a href="#">Home</a>
+                                </p>
+
+                                <p>
+                                    <a href="#">Delivery Information</a>
+                                </p>
+
+                                <p>
+                                    <a href="#">Privacy Policy</a>
+                                </p>
+
+                            </li>
+
+                            <li class="col-sm-4">
+
+                                <h4>STORE ADDRESS</h4>
+
+                                <p><span></span>907 Fifth Avenue, 09th floor,
+                                Rainbow Centre</p>
+                                <p><span></span>+44 203 723 2507</p>
+                                <p><span></span>sales@cimaeventsupplies.com</p>
+                                <p><span></span>enquires@cimaeventsupplies.com</p>
+
+                            </li>
+
+                            <li class="col-sm-4">
+
+                                <h4>CUSTOMER SERVICE</h4>
+
+                                <p>
+                                    <a href="#">Site Map</a>
+                                </p>
+
+                                <p>
+                                    <a href="#">Contact Us</a>
+                                </p>
+
+                                <p>
+                                    <a href="#">Delivery</a>
+                                </p>
+
+                                <p>
+                                    <a href="#">Returns</a>
+                                </p>
+
+                            </li>
+
+                        </ul>
+
+                    </div>  <!-- Footer Row end -->
+
+                </div>  <!-- Footer Top end -->
+
+                <!-- Footer Bottom start -->
+                <div class="bottom">
+
+                    <div class="row">
+
+                        <div class="copyRight col-sm-8">
+
+                            <p>Copyright &copy; 2016 Cima Event Supplies by <span style="color: goldenrod;">Wedeybuild.</span> All Rights Reserved.</p>
+
+                        </div>
+
+                        <div class="col-sm-4">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div> <!-- Main Footer End here -->
+
+        </div> <!-- Main Container End here -->
+        
+<!--Basket Modal -->
+<div id="basket" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+
+        <!-- Modal content-->
+        <div class="modal-content" style="border-radius: 0px;">
+            
+            <div class="row basket">
+                <div class="modal-header" style="background: #e53c6c; color: #fff;">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Shopping Basket</h4>
+                    <div class="row" style="text-align: right;">
+                        <!--<button type="button" class="btn btn-success" data-dismiss="modal" id="emptyBasket">Empty Basket</button>-->
+                    </div>
+                </div>
+                <div class="modal-body">
+
+                    <div class="row" style="padding: 15px;">
+                        <div class="col-sm-8">
+
+                        </div>
+                        <div class="col-sm-2" style="padding: 0px;">
+                            Price
+                        </div>
+                        <div class="col-sm-1">
+                            Qty
+                        </div>
+                        <div class="col-sm-1">
+
+                        </div>
+                    </div>
+
+                    <ul class="list-group" style="max-height: 320px; overflow-x: auto;">
+
+                        {if isset($baskets)}
+
+                            {foreach $basket in $baskets}
+
+                                <li class="list-group-item">
+
+                                    <div class="row">
+                                        <div class="col-sm-8">
+                                            <div class="col-sm-4">
+                                                <img src="{echo DIR_PATH}/products/photo/{echo $basket['image']}" alt="thumbnail" style="width: 50%;"/>
+                                            </div>
+                                            <div class="col-sm-8" style="padding: 0px;">
+                                                <p style="line-height: 70px;">{echo $basket["name"]}</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-2" style="padding: 0px;">
+                                            <p style="line-height: 70px;">&pound;{echo $basket["price"]}</p>
+                                        </div>
+                                        <div class="col-sm-1" style="padding: 0px; text-align: center;">
+                                            <p style="line-height: 70px;">{echo $basket["qty"]}</p>
+                                        </div>
+                                        <div class="col-sm-1" style="padding: 0px;">
+                                            <button type="button" value="{echo $basket['id']}" class="close basketDelete" style="line-height: 70px;">&times;</button>
+                                        </div>
+                                    </div>
+                                </li>
+
+                            {/foreach}
+                            
+                            {if ($total < 49.99)}
+
+                                <li class="list-group-item">
+
+                                    <div class="row">
+                                        <div class="col-sm-8">
+                                            <h4 style="line-height: 60px;">Delivery Charges for orders bellow £49.99</h4>
+                                        </div>
+                                        <div class="col-sm-2" style="padding: 0px;">
+                                            <p style="line-height: 70px;">6.99</p>
+                                        </div>
+                                        <div class="col-sm-1" style="padding: 0px; text-align: center;">
+                                            <p style="line-height: 70px;">Next Day</p>
+                                        </div>
+                                        <div class="col-sm-1" style="padding: 0px;"></div>
+                                    </div>
+                                </li>
+                            
+                            {/if}
+                            
+                            {if ($total > 49.99)}
+
+                                <li class="list-group-item">
+
+                                    <div class="row">
+                                        <div class="col-sm-8">
+                                            <h4 style="line-height: 60px;">Express Next Day Delivery</h4>
+                                        </div>
+                                        <div class="col-sm-2" style="padding: 0px;">
+                                            <p style="line-height: 70px;">Free</p>
+                                        </div>
+                                        <div class="col-sm-1" style="padding: 0px; text-align: center;">
+                                            <p style="line-height: 70px;">Next Day</p>
+                                        </div>
+                                        <div class="col-sm-1" style="padding: 0px;"></div>
+                                    </div>
+                                </li>
+                            
+                            {/if}
+
+                        {/if}
+
+                        {else}
+                            <li class="list-group-item">
+                                <div class="row">
+                                    <h1>Basket is Empty</h1>
+                                </div>
+                            </li>
+                        {/else}
+                    </ul>
+                </div>
+                <div class="modal-footer" style="">
+                    <div class="row" id="total">
+                        <div class="col-sm-2 total" style="text-align: right;">
+                            {if isset($total)}
+                                <h4>Total:</h4> 
+                            {/if}
+                        </div>
+                        <div class="col-sm-4 total" style="padding: 0px; text-align: left;">
+                            
+                            {if isset($total)}
+
+                                {if ($total < 49.99)}
+                                    <h2 class="totalAmount" style="padding: 0px; margin: 0px;">&pound;{echo $total + 6.99}</h2> 
+                                {/if}
+                                {else}
+                                <h2 class="totalAmount" style="padding: 0px; margin: 0px;">&pound;{echo $total}</h2> 
+                                {/else}
+
+                            {/if}
+                            
+                        </div>
+                        <div class="col-sm-6"> 
+                            {if isset($total)}        
+                                <a href="{echo DIR_PATH}/payment" style="height: 50px; float: left;"> 
+                                    <img src="{echo DIR_PATH}/resources/images/white_button.png" alt="button" />
+                                </a>
+                            <!--
+                                <a href="#"> 
+                                    <img src="https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif" align="left" style="margin-right:7px;"> 
+                                </a>
+                            -->
+                            {/if}
+                            <button type="button" class="btn btn-primary" data-dismiss="modal" style="margin-top: 5px;">Continue Shopping</button> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row authenticate">
+                
+                <div class="modal-header" style="padding: 0px;">
+                    <div class="row">
+                        <button type="button" class="close" data-dismiss="modal" style="padding: 5px;">&times;</button>
+                    </div>
+                </div>
+                <div class="modal-body">
+
+                    <ul class="list-group">
+                        
+                        <li class="list-group-item">
+                            <span>Already have an account?</span>
+                        </li>
+                        
+                        <li class="list-group-item">
+                            
+                            <form id="mLoginForm" class="row" method="post" action="{echo DIR_PATH}/users/login">
+                                
+                                <div class="col-sm-6">
+                                    <label for="email">Email:</label>
+                                    <input type="email" name="email" />
+                                </div>
+                                
+                                <div class="col-sm-6">
+                                    <label for="password">Password:</label>
+                                    <input type="password" name="password" />
+                                </div>
+
+                                <div class="col-sm-12" style="padding: 20px 0 20px 15px;">
+                                    <div class="col-sm-6">
+                                    <input class="btn btn-warning" type="submit" name="login" value="Login" /> 
+                                    </div>
+                                    
+                                    <div class="col-sm-6">
+                                        <div class="alert alert-danger lg-error">
+                                            not a valid email or password
+                                        </div>
+                                        <div class="alert alert-danger lg-msg">
+                                            email or password is empty
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </form>
+                            
+                        </li>
+                        
+                        <li class="list-group-item">
+                            
+                        </li>
+                        
+                    </ul>
+                    
+                    <ul class="list-group">
+                        
+                        <li class="list-group-item">
+                            <span>New Customer?</span>
+                        </li>
+                        
+                        <li class="list-group-item">
+                            
+                            <form class="row rg-form" id="mRegisterForm" method="post" action="{echo DIR_PATH}/users/register">
+                                
+                                <div class="col-sm-12" style="padding: 0;">
+                                    
+                                    <div class="col-sm-6" style="text-align: right;">
+                                        <label for="first">Firstname:</label>
+                                        <input type="text" name="first" />
+                                    </div>
+                                        
+                                    <div class="col-sm-6" style="text-align: right">
+                                        <label for="last">Lastname:</label>
+                                        <input type="text" name="last" />
+                                    </div>
+                                    
+                                </div>
+                                
+                                <div class="col-sm-12" style="padding: 20px 0 20px 0;">
+                                
+                                    <div class="col-sm-6" style="text-align: right">    
+                                        <label for="email">Email:</label>
+                                        <input type="email" name="email" />
+                                    </div>
+                 
+                                </div>
+                                
+                                <div class="col-sm-12">
+                                    
+                                    <div class="col-sm-6" style="text-align: right">
+                                        <label for="password">Password:</label>
+                                        <input type="password" name="password" />
+                                    </div> 
+                                       
+                                    <div class="col-sm-6" style="text-align: right; padding-right: 0px;">
+                                        <label for="cpassword">Confirm Password:</label>
+                                        <input type="password" name="cpassword" />
+                                    </div>
+                        
+                                </div>
+                                
+                                <div class="col-sm-12" style="padding-left: 0px;">
+                                    <h4>Delivery Address</h4>
+                                </div>
+                                
+                                <div class="col-sm-12" style="padding: 0px;">
+                                    
+                                    <div class="col-sm-4" style="padding: 0px;">
+                                        <label for="postcode" class="col-sm-6">Post Code:</label>
+                                        <input type="text" name="postcode" class="col-sm-6" />
+                                    </div> 
+                                       
+                                    <div class="col-sm-8" style="text-align: right; padding-right: 0px;">
+                                        <label for="address" class="col-sm-3">Address:</label>
+                                        <input type="text" name="address" class="col-sm-9" />
+                                    </div>
+                        
+                                </div>
+                                
+                                <div class="col-sm-12" style="padding: 20px 15px 20px 0; text-align: right;">
+                                    <div class="col-sm-6">
+                                        <div class="alert alert-danger rg-msg">
+                                            A field is empty
+                                        </div>
+                                        <div class="alert alert-danger password-msg">
+                                            passwords do not match
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input class="btn btn-danger" type="submit" name="register" value="Sign Up" /> 
+                                    </div>
+                                </div>
+                                
+                            </form>
+                            
+                        </li>
+                        
+                    </ul>
+                    
+                </div>               
+                
+            </div>
+            
+            
+            <div class="row paynow">
+                
+                <div class="modal-header" style="padding: 0px;">
+                    <div class="row">
+                        <button type="button" class="close" data-dismiss="modal" style="padding: 5px;">&times;</button>
+                    </div>
+                    <div class="row" style="text-align: right;">
+                        <div class="col-sm-12">
+                            <h3>welcome {if isset($user)} {echo $user->first} {/if}</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body"> 
+                   
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <div class="row">
+                                <div class="col-sm-2 total" style="text-align: right;">
+                                    {if isset($total)}
+                                        <h1>Total:</h1> 
+                                    {/if}
+                                </div>
+                                <div class="col-sm-4 total" style="padding: 0px; text-align: left;">
+                                    {if isset($total)}
+                                    <h1 class="totalAmount">&pound;{echo $total}</h1> 
+                                    {/if}
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    
+                </div>
+                <div class="modal-footer">
+                    <div class="row" id="total">
+                        <div class="col-sm-8">
+                        </div>
+                        <div class="col-sm-4">
+                            {if isset($total)}
+                                <a href="#" id="pay">
+                                    <img src="{echo DIR_PATH}/resources/images/white_button.png" alt="button" />
+                                </a>
+                            {/if}
+                        </div>
+                    </div>
+                </div>               
+                
+            </div>
+            
+            
+        </div>
+
+    </div>
+</div>
+        
+    </body>
+</html>
+

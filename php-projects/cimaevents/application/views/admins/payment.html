@@ -1,0 +1,124 @@
+{include subHeader.html}
+
+<!-- Content Start now -->
+<div class="content" style="margin: 0 0 100px 0; min-height: 400px; width: 100%;">
+    
+    <div class="row pannel">
+        
+        <div class="panel-group">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    
+                    <div class="col-sm-12" style="border: solid 1px #aaa">
+                        <h1>Payments</h1>
+                    </div>       
+                    
+                </div>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">Current Payments</div>
+                <div class="panel-body">
+
+                    <div class=" col-sm-12" style="border: solid 1px #aaa;">
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Customer:</th>
+                                    <th>Name:</th>
+                                    <th>Email:</th>
+                                    <th>Country:</th>
+                                    <th>Amount:</th>
+                                    <th>Method:</th>
+                                    <th>Date:</th>
+                                    <th>Action:</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {if isset($payments)}
+                                {foreach $payment in $payments}
+                                <tr>
+                                    <td>{echo $payment->payerId}</td>
+                                    <td>{echo $payment->name}</td>
+                                    <td>{echo $payment->email}</td>
+                                    <td>{echo $payment->country}</td>
+                                    <td>{echo $payment->amount}</td>
+                                    <td>{echo $payment->type}</td>
+                                    <td>{echo $payment->created}</td>
+                                    <td>
+                                        <a href="{echo DIR_PATH}/admins/deletePayment/{echo $payment->id}" class="btn btn-danger">Delete</a>
+                                    </td>
+                                </tr>
+                                {/foreach}
+                                {/if}
+                                {else}
+                                <tr>
+                                    <td>No Data</td>
+                                </tr>
+                                {/else}
+                            </tbody>
+                        </table>
+
+                    </div>
+                
+                </div>
+            </div>
+            
+            <div class="panel panel-default">
+                <div class="panel-heading">Deleted Payments</div>
+                <div class="panel-body">
+
+                    <div class=" col-sm-12" style="border: solid 1px #aaa;">
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Customer:</th>
+                                    <th>Name:</th>
+                                    <th>Email:</th>
+                                    <th>Country:</th>
+                                    <th>Amount:</th>
+                                    <th>Method:</th>
+                                    <th>Date:</th>
+                                    <th>Action:</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {if isset($deletedPayments)}
+                                {foreach $payment in $deletedPayments}
+                                <tr>
+                                    <td>{echo $payment->payerId}</td>
+                                    <td>{echo $payment->name}</td>
+                                    <td>{echo $payment->email}</td>
+                                    <td>{echo $payment->country}</td>
+                                    <td>{echo $payment->amount}</td>
+                                    <td>{echo $payment->type}</td>
+                                    <td>{echo $payment->created}</td>
+                                    <td>
+                                        <a href="{echo DIR_PATH}/admins/undeletePayment/{echo $payment->id}" class="btn btn-danger">Undelete</a>
+                                    </td>
+                                </tr>
+                                {/foreach}
+                                {/if}
+                                {else}
+                                <tr>
+                                    <td>No Data</td>
+                                </tr>
+                                {/else}
+                            </tbody>
+                        </table>
+
+                    </div>
+                
+                </div>
+            </div>
+        </div>
+
+   </div>
+
+
+
+</div>  <!-- Content End here -->
+        
+{include subFooter.html}

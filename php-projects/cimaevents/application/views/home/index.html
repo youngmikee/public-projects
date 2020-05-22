@@ -1,0 +1,165 @@
+<!-- Main Banner Start here -->
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+    
+    <div class="carousel-inner" role="listbox">
+    
+        <div class="item active">
+            <div class="banner">
+
+                <div class="row">               
+
+                    <div class="info">
+                        <h1>GET YOUR SUPPLIES OF EVENT SERVING EQUIPMENTS, EVENT DECORATIONS, EVENT TABLES & CHAIR DRESSING FROM US TODAY.</h1>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        
+        <div class="item">
+            <div class="banner1">
+                
+                <div class="row">
+                    
+                    <div class="clipboard">
+                    
+                        <div class="left">
+                            <div class="info">
+
+                                <h1>WEDDING RECEPTION</h1>
+                                <h4>Get your equipments from us</h4>
+
+                            </div>
+                        </div>
+
+                        <div class="right">
+                            <img class="wed" src="resources/images/wedding.png" alt="wedding photo"/>
+                        </div>
+                    
+                    </div>
+                
+                </div>
+                
+            </div>
+        </div>
+        
+        <div class="item">
+            <div class="banner2" style="background: #ccc;">
+            
+                <div class="row">
+                    
+                    <div class="clipboard">
+                    
+                        <div class="left">
+                            <div class="info">
+
+                                <h1>BIRTHDAY / CHRISTENING</h1>
+                                <h4>Lets make it more wonderful</h4>
+
+                            </div>
+                        </div>
+
+                        <div class="right">
+                            <img class="bday" src="resources/images/baloons.png" alt="birthday photo"/>
+                        </div>
+                    
+                    </div>
+                
+                </div>
+            
+            </div>
+        </div>
+        
+    </div>
+    
+</div>
+
+<!-- Main Banner End here -->
+
+<!-- Content Start here -->
+<div class="content">
+
+    <!-- Content Products Start here -->
+    <div class="products">
+
+        <div class="row">
+            
+            <div id="popular" class="col-sm-12">
+                <h3>FEATURED PRODUCTS</h3>
+                
+                <hr class="featurette-divider">
+
+                <ul class="col-sm-12">
+                    
+                    {if isset($populars) and !empty($populars)}
+
+                        {foreach $product in $populars}
+                    
+                            <li class="col-sm-4">
+
+                                <div class="box list-group col-sm-10">
+
+                                    <div class="img list-group-item">
+                                        <a href="{echo DIR_PATH}/rental/product/?selected={echo $product->id}">
+                                            <img src="{echo DIR_PATH}/products/photo/{echo str_replace(' ', '_', $product->name)}.$product->image" alt="product name"/>
+                                        </a>
+                                    </div>
+
+                                    <div class="details list-group-item">
+
+                                        <div class="title">
+                                            <a href="{echo DIR_PATH}/rental/product/?selected={echo $product->id}">{echo $product->name}</a>
+                                        </div>
+
+                                        <div class="price">
+                                            <p>&pound;{echo $product->price}</p>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </li>
+                    
+                        {/foreach}
+                    
+                    {/if}
+
+                </ul>
+                
+            </div>
+
+        </div>
+        
+    </div>  <!-- Content Products End here -->
+    
+
+
+    <!-- Content Welcome Start here -->
+    <div class="welcome">
+
+        <div class="row">
+
+            <h1>We will like to welcome you to Cimaevent suppliers and services</h1>
+            <h5>9:30AM - 6:30PM FREE DELIVERY </h5>
+
+            <p>We provide services for all your event needs, such as WEDDINGS, KIDS PARTIES, BIRTHDAY PARTIES,
+            CHRISTENING AND OUTDOOR EVENTS.</p>
+
+            <p>Take advantage of our Cheap, Quality and Professional Party Hosts Servers and Cleaning Services.</p>
+
+        </div>
+
+    </div>  <!-- Content Welcome End here -->
+
+</div> <!-- Content End here -->

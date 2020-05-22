@@ -1,0 +1,183 @@
+{include subHeader.html}
+
+<!-- Content Start now -->
+<div class="content" style="margin: 0 0 100px 0; min-height: 400px; width: 100%;">
+
+    <div class="row pannel">
+
+        <div class="panel-group">
+            <div class="panel panel-default">
+                <div class="panel-body">
+
+                    <div class="col-sm-12" style="border: solid 1px #aaa">
+                        <div class="col-sm-6">
+                            <h1>Service Control</h1>
+                        </div>
+                        <div class="col-sm-6" style="padding: 20px; text-align: right;">
+                            <a href="{echo DIR_PATH}/admins/createService" class="btn btn-success">Create</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading"><h3>All Services</h3></div>
+                <div class="panel-body">
+
+                    <div class="col-sm-12" style="border: solid 1px #aaa; padding: 30px 0 0 0;">
+                        <div class="table-responsive">
+                            <table class="table">
+                                {if isset($services)}
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Type</th>
+                                        <th>Visibility</th>
+                                        <th>Price</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {foreach $service in $services}
+                                    <tr>
+                                        <td>{echo $service->name}</td>
+                                        <td>{echo $service->type}</td>
+                                        <td>{echo $service->visibility}</td>
+                                        <td>{echo "&pound;".$service->price}</td>
+                                        <td>
+                                            <button data-toggle="collapse" data-target="#editService{echo $product->id}" class="btn btn-primary editBtn">Edit</button>
+                                            <a href="{echo DIR_PATH}/admins/deleteService/{echo $service->id}" class="btn btn-danger">Delete</a>
+                                        </td>
+                                    </tr>
+                                    <tr id="editService{echo $service->id}" class="collapse">
+                                        <form role="form" action="{echo DIR_PATH}/admins/editService" method="post">
+                                            <td>
+                                                <input type="hidden" name="id" value="{echo $service->id}" />
+                                                <input type="text" name="name" value="{echo $service->name}" />
+                                            </td>
+                                            <td>
+                                                <select name="type">
+                                                    <option {echo($service->type == 'wedding')? 'selected' : ''} value="wedding">Wedding Service</option>
+                                                    <option {echo($service->type == 'cleaning')? 'selected' : ''} value="service">CLeaning Service</option>
+                                                </select>
+                                            </td>
+                                            <td>
+                                                <select name="visibility">
+                                                    <option {echo($service->visibility == 'wedding')? 'selected' : ''} value="wedding">Wedding Service</option>
+                                                    <option {echo($service->visibility == 'cleaning')? 'selected' : ''} value="cleaning">Cleaning Service</option>
+                                                    <option {echo($service->visibility == 'popular')? 'selected' : ''} value="popular">Popular</option>
+                                                    <option {echo($service->visibility == 'coming soon')? 'selected' : ''} value="coming soon">Coming Soon</option>
+                                                    <option {echo($service->visibility == 'search')? 'selected' : ''} value="search">Search</option>
+                                                </select>
+                                            </td>
+                                            <td>
+                                                <input type="text" name="price" class="col-sm-6" value="{echo $service->price}" />
+                                            </td>
+                                            <td>
+                                                <button type="button" class="close closebtn" data-toggle="collapse" data-target="#editService{echo $service->id}">&times;</button>
+                                                <input type="submit" name="editService" value="Save" class="btn btn-success editSaveBtn" />
+                                            </td>
+                                        </form>
+                                    </tr>
+                                    {/foreach}
+                                </tbody>
+                                {/if}
+                                {else}
+                                <thead>
+                                    <tr>
+                                        <th>No Data</th>
+                                    </tr>
+                                </thead>
+                                {/else}
+                            </table>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">Deleted Services</div>
+                <div class="panel-body">
+
+                    <div class="col-sm-12" style="border: solid 1px #aaa; padding: 30px 0 0 0;">
+                        <div class="table-responsive">
+                            <table class="table">
+                                {if isset($deletedServices)}
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Type</th>
+                                        <th>Visibility</th>
+                                        <th>Price</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {foreach $service in $deletedServices}
+                                    <tr>
+                                        <td>{echo $service->name}</td>
+                                        <td>{echo $service->type}</td>
+                                        <td>{echo $service->visibility}</td>
+                                        <td>{echo "&pound;".$service->price}</td>
+                                        <td>
+                                            <button data-toggle="collapse" data-target="#editService{echo $service->id}" class="btn btn-primary editBtn">Edit</button>
+                                            <a href="{echo DIR_PATH}/admins/undeleteService/{echo $service->id}" class="btn btn-danger">Undelete</a>
+                                        </td>
+                                    </tr>
+                                    <tr id="editService{echo $service->id}" class="collapse">
+                                        <form role="form" action="{echo DIR_PATH}/admins/editService" method="post">
+                                            <td>
+                                                <input type="hidden" name="id" value="{echo $service->id}" />
+                                                <input type="text" name="name" value="{echo $service->name}" />
+                                            </td>
+                                            <td>
+                                                <select name="type">
+                                                    <option {echo($service->type == 'wedding')? 'selected' : ''} value="wedding">Wedding Service</option>
+                                                    <option {echo($service->type == 'cleaning')? 'selected' : ''} value="cleaning">Cleaning</option>
+                                                </select>
+                                            </td>
+                                            <td>
+                                                <select name="visibility">
+                                                    <option {echo($service->visibility == 'wedding')? 'selected' : ''} value="wedding">Wedding Service</option>
+                                                    <option {echo($service->visibility == 'cleaning')? 'selected' : ''} value="cleaning">Cleaning Service</option>
+                                                    <option {echo($service->visibility == 'popular')? 'selected' : ''} value="popular">Popular</option>
+                                                    <option {echo($service->visibility == 'coming soon')? 'selected' : ''} value="coming soon">Coming Soon</option>
+                                                    <option {echo($service->visibility == 'search')? 'selected' : ''} value="search">Search</option>
+                                                </select>
+                                            </td>
+                                            <td>
+                                                <input type="text" name="price" class="col-sm-6" value="{echo $service->price}" />
+                                            </td>
+                                            <td>
+                                                <button type="button" class="closebtn" data-toggle="collapse" data-target="#editService{echo $service->id}">&times;</button>
+                                                <input type="submit" name="editService" value="Save" class="btn btn-success editSaveBtn" />
+                                            </td>
+
+                                        </form>
+                                    </tr>
+                                    {/foreach}
+                                </tbody>
+                                {/if}
+                                {else}
+                                <thead>
+                                    <tr>
+                                        <th>No Data</th>
+                                    </tr>
+                                </thead>
+                                {/else}
+                            </table>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>  <!-- Content End here -->
+        
+{include subFooter.html}

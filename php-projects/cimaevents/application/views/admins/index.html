@@ -1,0 +1,126 @@
+{include subHeader.html}
+
+
+<!-- Content Start now -->
+<div class="content" style="margin: 0 0 100px 0; min-height: 400px; width: 100%;">
+
+    <div class="row pannel">
+
+        <div class="panel-group">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="col-sm-12 head">
+                        <h1>Dashboard</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4 left">
+
+            <div class="panel-group">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">Panel with panel-primary class</div>
+                    <div class="panel-body">
+
+                        <table class="table">
+
+                            <thead>
+                                <tr>
+                                    <th>Lifetime Sales</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td class="s-card">
+                                        {if isset($totalPayment)}
+
+                                        <h1>&pound;{echo $totalPayment}</h1>
+
+                                        {/if}
+                                    </td>
+                                </tr>
+                            </tbody>
+
+                        </table>
+
+                        <table class="table">
+
+                            <thead>
+                                <tr>
+                                    <th>Average Sales</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td class="s-card">
+                                        {if isset($averagePayment)}
+
+                                        <h1>&pound;{echo $averagePayment}</h1>
+
+                                        {/if}
+                                    </td>
+                                </tr>
+                            </tbody>
+
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        
+
+        <div class="col-sm-8 right">
+
+            <div class="col-sm-12">
+
+                <div id="order">
+
+                    <div class="col-sm-12 box">
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Product</th>
+                                    <th>Quantity</th>
+                                    <th>Amount</th>
+                                    <th>Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {if isset($sales)}
+                                {foreach $sale in $sales}
+                                <tr>
+                                    <td>{echo $sale->product}</td>
+                                    <td>{echo $sale->qty}</td>
+                                    <td>{echo $sale->amount}</td>
+                                    <td>{echo $sale->created}</td>
+                                </tr>
+                                {/foreach}
+                                {/if}
+                                {else}
+                                <tr>
+                                    <td>No Data</td>
+                                </tr>
+                                {/else}
+                            </tbody>
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+</div>  <!-- Content End here -->
+
+{include subFooter.html}

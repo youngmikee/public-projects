@@ -1,0 +1,95 @@
+<!-- Content Start here -->
+<div class="content">
+
+    <!-- Welcome Start here -->
+    <div class="welcome">
+
+        <div class="row">
+            <h5>9:30AM - 6:30PM FREE DELIVERY </h5>
+
+            <p>We provide services for all events, such as WEDDINGS, KIDS PARTIES, BIRTHDAY PARTIES,
+            CHRISTENING AND OUTDOOR EVENTS.</p>
+
+            <p>Take advantage of our Cheap, Quality and Professional Party Hosts Servers and Cleaning Services.</p>
+
+        </div>
+
+    </div>  <!-- Content Welcome End here -->
+
+    <div class="url">
+
+        <div class="row">
+
+            <ul class="breadcrumb">
+                <li><a href="{echo DIR_PATH}">Home</a></li>
+                <li><a href='#' class="active">Cleaning Service</a></li>
+            </ul>
+
+        </div>
+
+    </div>
+
+    <!-- Products start here -->
+    <div class="products">
+
+        <div class="row">
+
+            <ul class="list-group">
+            {if isset($services)}
+                {foreach $service in $services}
+                <li class="col-sm-12 list-group-item">
+
+                    <div class="col-sm-4 left-box">
+                        <img src="{echo DIR_PATH}/service/photo/{echo str_replace(' ', '-', $service->name)}.$service->image" alt="service name" width="100%"/>
+                    </div>
+
+                    <div class="col-sm-8 right-box">
+
+                        <div class="row heading">
+
+                            <div class="col-sm-8 title">
+
+                                <h1>
+                                    {echo $service->name}
+                                </h1>
+
+                            </div>
+
+                            <div class="col-sm-4">
+
+                                <h3 class="price">
+                                    {echo "&pound;".$service->price}
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+                        <div class="details blockquote">
+                            <p>{echo $service->description}</p>
+                        </div>
+
+                        <div class="buttons row">
+
+                            <div class="col-sm-5">
+                                <button>More Info</button>
+                            </div>
+
+                            <div class="col-sm-7">
+                                <button>Add to Shopping Cart</button>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </li>
+                {/foreach}
+            {/if}
+            </ul>
+
+        </div>
+
+    </div>  <!-- Products end here -->
+
+</div> <!-- Content End here -->

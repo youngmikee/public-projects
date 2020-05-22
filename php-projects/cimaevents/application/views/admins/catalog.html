@@ -1,0 +1,83 @@
+{include subHeader.html}
+
+<!-- Content Start now -->
+<div class="content" style="margin: 0 0 100px 0; min-height: 400px; width: 100%;">
+
+    <div class="row pannel">
+
+        <div class="col-sm-12 head">
+            <h1>Catalog</h1>
+        </div>
+
+        <div class="col-sm-12" style="height: 300px; padding: 30px 0 0 0;">
+
+            <form method="post" class="col-sm-12" style="border: solid 1px #aaa; height: 100px;">
+
+                <table class="table">
+
+                    <thead>
+                        <tr>
+                            <th>Catalog Name:</th>
+                            <th>Type:</th>
+                            <th>Price:</th>
+                            <th>Qty:</th>
+                            <th>Visibility:</th>
+                            <th>Status:</th>
+                            <th>Action:</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>
+                                <input type="text" name="name" class="col-sm-12"/>
+                            </td>
+                            <td>
+                                <select name="type">
+                                    <option value="product">product</option>
+                                    <option value="service">service</option>
+                                </select>
+                            </td>
+                            <td>
+                                <input type="text" name="price" class="col-sm-12"/>
+                            </td>
+                            <td>
+                                <input type="text" name="qty" class="col-sm-12"/>
+                            </td>
+                            <td>
+                                <select name="visibility">
+                                    <option value="rental">Rental</option>
+                                    <option value="purchase">Purchase</option>
+                                    <option value="popular">Popular</option>
+                                    <option value="coming soon">Coming Soon</option>
+                                    <option value="search">Search</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select name="status">
+                                    <option value="0">Disabled</option>
+                                    <option value="1">Enabled</option>
+                                </select>
+                            </td>
+                            <td>
+                                <input type="submit" name="createCatalog" value="Create" />
+                            </td>
+                        </tr>
+                    </tbody>
+
+                </table>
+
+            </form> <!-- Form End here -->
+
+            <div class="col-sm-12" style="border: solid 1px #aaa; height: 100px; margin: 50px 0 0 0;">
+                <h3>No Data</h3>
+            </div>
+
+        </div>
+
+    </div>
+
+
+</div>  <!-- Content End here -->
+        
+{include subFooter.html}

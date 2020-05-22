@@ -1,0 +1,155 @@
+
+
+<!-- Content Start now -->
+<div class="content" style="margin: 0 0 100px 0; min-height: 400px; width: 100%;">
+
+    <div class="row pannel">
+
+        <div class="col-sm-12">
+            <h1>Order Summary</h1>
+        </div>
+
+        <div class="col-sm-12" style="padding: 30px 0 0 0;">
+
+            <div class="col-sm-12" style="margin: 0 0 50px 0;">
+                   
+                <div class="col-sm-8">
+                    
+                    <div class="panel panel-danger">
+                        <div class="panel-heading">Order Information</div>
+                        <div class="panel-body">
+
+                            <div class="row" style="padding: 15px;">
+                                <div class="col-sm-8">
+
+                                </div>
+                                <div class="col-sm-2" style="padding: 0px;">
+                                    Price
+                                </div>
+                                <div class="col-sm-1">
+                                    Qty
+                                </div>
+                                <div class="col-sm-1">
+
+                                </div>
+                            </div>
+
+                            <ul class="list-group" style="max-height: 320px; overflow-x: auto;">
+
+                                {if isset($baskets)}
+
+                                {foreach $basket in $baskets}
+
+                                <li class="list-group-item">
+
+                                    <div class="row">
+                                        <div class="col-sm-8">
+                                            <div class="col-sm-4">
+                                                <img src="{echo DIR_PATH}/products/photo/{echo $basket['image']}" alt="thumbnail" style="width: 50%;"/>
+                                            </div>
+                                            <div class="col-sm-8" style="padding: 0px;">
+                                                <p style="line-height: 70px;">{echo $basket["name"]}</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-2" style="padding: 0px;">
+                                            <p style="line-height: 70px;">&pound;{echo $basket["price"]}</p>
+                                        </div>
+                                        <div class="col-sm-1" style="padding: 0px; text-align: center;">
+                                            <p style="line-height: 70px;">{echo $basket["qty"]}</p>
+                                        </div>
+                                        <div class="col-sm-1" style="padding: 0px;">
+                                        </div>
+                                    </div>
+                                </li>
+
+                                {/foreach}
+
+                                {/if}
+
+                                {else}
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <h1>Basket is Empty</h1>
+                                    </div>
+                                </li>
+                                {/else}
+                            </ul>
+                        
+                        </div>
+                    </div>
+                    
+                </div>
+            
+                   
+                <div class="col-sm-4">
+                    
+                    <div class="panel panel-danger">
+                        <div class="panel-heading">Delivery Information</div>
+                        <div class="panel-body">
+                            {if isset($responses)}
+                            <p>
+                                {echo $responses["PAYMENTREQUEST_0_SHIPTONAME"]}
+                            </p>
+                            <p>
+                                {echo $responses["PAYMENTREQUEST_0_SHIPTOSTREET"]}
+                            </p>
+                            <p>
+                                {echo $responses["PAYMENTREQUEST_0_SHIPTOCITY"]}
+                            </p>
+                            <p>
+                                {echo $responses["PAYMENTREQUEST_0_SHIPTOCOUNTRYNAME"]}
+                            </p>
+                            <p>
+                                {echo $responses["PAYMENTREQUEST_0_SHIPTOZIP"]}
+                            </p>
+                            {/if}
+                        </div>
+                    </div>
+                    
+                    <div class="panel panel-danger">
+                        <div class="panel-heading">Confirm Order</div>
+                        <div class="panel-body">
+                            
+                            <ul class="list-group">
+                                <li class="list-group-item list-group-item-success">
+                                    
+                                    {if isset($total)}
+                                    
+                                        {if ($total < 49.99)}
+                                            Total: <span style="text-align: right;">&pound;{echo $total + 6.99}</span>
+                                        {/if}
+                                        {else}
+                                            Total: <span style="text-align: right;">&pound;{echo $total}</span>
+                                        {/else}
+                                        
+                                    {/if}
+                                    
+                                </li>
+                            </ul>
+                            
+                            <form role="form" action="{echo DIR_PATH}/payment/doCheckout" method="post">
+                                <div class="checkbox">
+                                    <input type=hidden name=NAME value="{echo $responses['PAYMENTREQUEST_0_SHIPTONAME']}">
+                                    <input type=hidden name=EMAIL value="{echo $responses['EMAIL']}">
+                                    <input type=hidden name="COUNTRY" value="{echo $responses['PAYMENTREQUEST_0_SHIPTOCOUNTRYNAME']}">
+                                    <input type=hidden name=PAYERID value="{echo $responses['PAYERID']}">
+                                    <input type=hidden name=TOKEN value="{echo $responses['TOKEN']}">
+                                    <label><input type="checkbox" required> I agree to the <a href="">terms and conditions</a></label>
+                                </div>
+                                <button type="submit" class="btn btn-warning">Confirm Order</button>
+                            </form>
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+            
+        </div>
+
+    </div>
+
+
+</div>  <!-- Content End here -->
+        
