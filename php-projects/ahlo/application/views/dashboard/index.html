@@ -1,0 +1,342 @@
+		<div data-role="panel" id="settingsPanel" data-theme="f" data-display="overlay" data-position="right" style="margin: 45px 0 0 0;">
+			
+    		<ul data-role="listview" >  
+
+				<li>
+					<a href="{echo DIR_PATH}/messenger" class="ui-btn ui-icon-bullets ui-nodisc-icon ui-btn-icon-left">Chat Rooms</a>
+				</li>
+			
+				<li>
+					<a href="#" class="ui-btn ui-icon-mail ui-nodisc-icon ui-btn-icon-left">Box</a>
+				</li>
+			
+				<li>
+					<a href="#" class="ui-btn ui-icon-star ui-nodisc-icon ui-btn-icon-left">Pals</a>
+				</li>
+				
+				<li>
+					<a href="#" class="ui-btn ui-icon-camera ui-nodisc-icon ui-btn-icon-left">Snaps</a>
+				</li> 
+			
+				<li>
+					<a href="#" class="ui-btn ui-icon-video ui-nodisc-icon ui-btn-icon-left">Streams</a>
+				</li>
+				
+				<li>
+					<a href="{echo DIR_PATH}/settings/profile" class="ui-btn ui-icon-gear ui-nodisc-icon ui-btn-icon-left">Profile Settings</a>
+				</li>	
+				
+				<li>
+					<a href="{echo DIR_PATH}/settings/account" class="ui-btn ui-icon-gear ui-nodisc-icon ui-btn-icon-left">Account Settings</a>
+				</li>
+				
+				<li>
+					<a href="{echo DIR_PATH}/dashboard/logout" class="ui-btn ui-icon-power ui-nodisc-icon ui-btn-icon-left">Logout</a>
+				</li>
+			
+			</ul>
+			
+			
+		</div>
+		
+	
+		<div data-role="header" >
+			<a href="{echo DIR_PATH}/messenger/dashboard" class="ui-btn ui-icon-comment ui-nodisc-icon ui-btn-icon-notext">Messenger</a>
+			<h1>AHLO!</h1>
+			<a href="#settingsPanel" class="ui-nodisc-icon ui-btn ui-icon-grid ui-btn-icon-notext">Settings</a>
+		</div>	
+
+    	<div id="profile" data-role="main" class="ui-content">
+    		
+    		<div class="row">
+
+				<ul>
+					
+					<li>
+					
+						<div id="profilePhoto" class="ui-body ui-body-a">
+							
+							<img class="defaultImg" src="{echo DIR_PATH}/images/silhouette123.png" alt="profile photo" />
+							
+						</div>
+						
+					</li>
+					
+					<li>
+						
+						<div id="ahlo">
+																			
+							<form id="ahloForm" method="post" action="#">
+							
+								<div class="left">
+									<input type="text" name="status" placeholder="How far..."  data-corners="false"/>
+								</div>
+								<div class="right">
+									<input type="submit" value="share" data-corners="false" />
+								</div>
+									
+							</form>
+							
+						</div>
+						
+					</li>
+					
+					<li>
+						
+						<div id="profileInfo">
+							
+							<div  class="left">
+								
+								<ul data-role="listview">
+										
+									<li>
+										<h3>Username</h3>
+									</li>
+									<li>
+										<h3>Birthday</h3>
+									</li>
+									<li>
+										<h3>Fav Room</h3>
+									</li>
+									
+									<li>
+										<h3>Like: Football</h3>
+									</li>
+									
+								</ul>
+								
+		
+								
+							</div>
+							
+							<div class="right">
+								
+								<h1>88</h1>
+								<p>friends</p>
+							</div>
+							
+						</div>
+						
+					</li>
+					
+					<li>
+							
+						<div id="calender">
+							
+							<div class="left">
+								
+								<ul class="calenderDate">
+									<li>
+										<h2>
+											<span>24</span>
+											<span>JAN</span>
+										</h2>
+									</li>
+										
+									<li>
+										<h2>MON</h2>
+									</li>
+									
+									<li>
+										<h2>2015</h2>
+									</li>
+								</ul>
+								
+							</div>
+							
+							<div class="right">
+								
+								<div id="calenderTime">
+									
+									<h1>
+										08:46:00
+									</h1>
+									
+								</div>
+								
+							</div>
+							
+						</div>
+						
+					</li>
+					
+					<li>
+						
+						<ul id="weather">
+							<div class="columns eight">
+								
+								<div class="columns sixteen">
+									<div class="columns four icon">
+										<img id="weatherimage" src="{if isset($icon)} {echo $icon} {/if}" alt="profile photo" />
+									</div>
+									<div  class="columns eleven temp">
+										<span class="big">{if isset($temp)} {echo $temp} {/if}</span>
+										<span class="deg">&deg;C</span>
+									
+									</div>
+								</div>
+								
+							</div>
+							<div class="columns eight weather">
+								
+								<ul>
+									<li class="city">{if isset($city)} {echo $city} {/if}</li>
+									<li>{if isset($info)} {echo $info} {/if}</li>
+									<li class="highlow">{if isset($max)} {echo $max} {/if} &deg; / {if isset($min)} {echo $min} {/if} &deg;</li>
+								</ul>
+								
+							</div>
+						</ul>
+						
+					</li>
+					
+					<li>
+						
+						<div id="news">
+							
+							<div class="left">
+								
+								<img src="{echo DIR_PATH}/images/silhouette122.png" alt="profile photo" />
+								
+							</div>
+							
+							<div class="right">
+								
+								<h1>Headline</h1>
+								
+								<p>
+									ECB chairman attacked by a protestester
+								</p>
+								
+							</div>
+							
+						</div>
+						
+					</li>
+					
+					<li>
+						
+						<div id="events">
+							
+							<h1>Date</h1>
+							
+							<div class="status">
+								
+								<ul class="left">
+	
+									<li>
+										<img src="{echo DIR_PATH}/images/silhouette122.png" alt="profile photo" />
+									</li>
+									
+									<li>
+										<h3>
+											Username
+										</h3>
+									</li>							
+									
+								</ul>
+								
+								<ul class="right">
+									
+									<li>
+										
+										<p>
+											AHLOO!
+										</p>
+										
+									</li>
+									
+									<li>							
+										
+										<p>
+											 Something understood!
+										</p>
+										
+									</li>
+									
+									<li>
+										
+										<p class="f">
+											@ time
+										</p>
+										
+									</li>
+									
+								</ul>
+								
+							</div>
+							
+							<ul class="media">
+								
+								<li>
+									
+									<div class="cont">
+										<img class="defaultImg" src="{echo DIR_PATH}/images/silhouette123.png" alt="profile photo" />
+									</div>
+									
+								</li>
+								<li>
+									
+									<div class="info">
+										<p>Username profile picture @ time</p>
+									</div>
+									
+								</li>
+								
+							</ul>
+							
+							<div class="status">
+								
+								<ul class="left">
+	
+									<li>
+										<img src="{echo DIR_PATH}/images/silhouette122.png" alt="profile photo" />
+									</li>
+									
+									<li>
+										<h3>
+											Username
+										</h3>
+									</li>							
+									
+								</ul>
+								
+								<ul class="right">
+									
+									<li>
+										
+										<p>
+											AHLOO!
+										</p>
+										
+									</li>
+									
+									<li>							
+										
+										<p>
+											 Something understood!
+										</p>
+										
+									</li>
+									
+									<li>
+										
+										<p class="f">
+											@ time
+										</p>
+										
+									</li>
+									
+								</ul>
+								
+							</div>
+						
+						</div>
+						
+					</li>
+					
+				</ul>		
+
+			</div>
+
+    	</div>

@@ -1,0 +1,69 @@
+		<div data-role="header">
+			<a href="#" data-rel="back" class="ui-btn ui-icon-carat-l ui-btn-icon-notext ui-nodisc-icon">Back</a>
+			<h1>Registration</h1>
+			<a href="#info" data-rel="popup" class="ui-btn ui-icon-info ui-btn-icon-notext ui-nodisc-icon" >Info</a>
+		</div>
+		
+		<div data-role="popup" id="info">
+			<p>
+				Note: By sumiting this form you have agreed to AHLO! <a href='#'>terms and condition.</a>
+			</p>
+		</div>
+
+    	<div id="register" data-role="main" class="ui-content">
+    		
+    		{if isset($message)}
+    		
+    			<p>
+    				{echo $message}
+    			</p>
+    		
+    		{/if}
+    		
+			<div class="row">
+					
+        		<form  id="registerForm" method="post" action="{echo DIR_PATH}/authenticate/register">
+        			
+        			<ul>
+        				
+        				<li>
+        					<label for="username">Username:</label>
+        					<input type="text" name="username" placeholder="Helen2015" maxlength="10" data-corners="false"/>
+        				</li>
+        				
+        				<li>
+        					<label for="email">Email:</label>
+        					<input type="text" name="email" placeholder="name@somemail.com" data-corners="false" />
+        				</li>
+        				
+        				<li>
+        					<label for="pwd">Password:</label>
+        					<input type="password" name="pwd" placeholder="password" data-corners="false" />
+        				</li>
+        				
+        				<li>
+        					<label for="cpwd">Confirm Password:</label>
+        					<input type="password" name="cpwd" placeholder="Confirm Password" data-corners="false" />
+        				</li>
+        				
+        				<li>
+        					<input type="submit" value="Register" data-corners="false" />
+        				</li>
+        				
+        			</ul>
+        			
+        		</form>
+				
+			</div>
+    		
+  			<div class="row">
+  				
+  				<div class="loginBtn">
+  					
+  					<!--<a href="{echo DIR_PATH}/authenticate/login" class="ui-btn">Login</a>-->
+  					
+  				</div>
+  				
+  			</div>
+    		
+    	</div>

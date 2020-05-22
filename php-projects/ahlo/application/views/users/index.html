@@ -1,0 +1,97 @@
+<div class="content">
+<!-- 
+    This is a profile page!
+-->
+    <div class="columns thirteen">
+        <div class="columns three">
+            <div class="nav">    
+                <ul>
+                    <li>
+                        <a href="{echo DIR_PATH}/users/profile">Basic Expenses</a>
+                    </li>
+                    <li>
+                        <a href="{echo DIR_PATH}/users/settings">Fixed Expenses</a>
+                    </li>
+                    <li>
+                        <a href="{echo DIR_PATH}/users/settings">Receipts</a>
+                    </li>
+                    <li>
+                        <a href="{echo DIR_PATH}/users/settings">Income</a>
+                    </li>
+                    <li>
+                        <a href="{echo DIR_PATH}/users/settings">Statements</a>
+                    </li>
+                    <li>
+                        <a href="{echo DIR_PATH}/users/settings">Health Check</a>
+                    </li>
+                    <li>
+                        <a href="{echo DIR_PATH}/users/settings">Control Settings</a>
+                    </li>
+                    <li class="last">
+                        <a href="{echo DIR_PATH}/users/settings">Account Settings</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="columns thirteen">
+            <div class="columns eleven">
+                <div class="barchart">
+
+                </div>
+            </div>
+            <div class="columns five">
+                <div class="piechart">
+
+                </div>
+                <div class="statement">
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="columns sixteen">
+            <div class="columns three">
+                <div class="savings">
+
+                </div>
+            </div>
+            <div class="columns nine">
+                <div class="table">
+
+                </div>
+            </div>
+            <div class="columns four">
+                <div class="timer">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="columns three">
+        <div class="expenselist">
+
+            {if isset ($expenses)}
+            <div class="table">
+                {foreach $expense in $expenses}
+                <div class="tableRow ">
+                    <div class="tableCell bottomborder">
+                        {echo $expense->retailer}
+                    </div>
+                    <div class="tableCell bottomborder">
+                        {echo $expense->item}
+                    </div>
+                    <div class="tableCell leftborder bottomborder">
+                        {echo $expense->amount}
+                    </div>
+                </div>
+                {/foreach}
+            </div>
+            {/if}
+
+        </div>
+    </div>
+
+</div>

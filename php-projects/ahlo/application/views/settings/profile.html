@@ -1,0 +1,118 @@
+		<div data-role="header">
+			<a data-ajax="false" href="{echo DIR_PATH}/dashboard" class="ui-btn ui-icon-home ui-nodisc-icon ui-btn-icon-notext">Home</a>
+			<h1>
+				Ahlo!
+			</h1>
+			<a data-ajax="false" href="{echo DIR_PATH}/settings/account" class="ui-btn ui-icon-gear ui-nodisc-icon ui-btn-icon-notext">Account Settings</a>
+			
+		</div>	
+		
+		<div data-role="popup" id="editprofile"  style="margin: 0 10px 0 0;" >
+			
+			<form method="post" action="{echo DIR_PATH}/settings/profile" data-role="controlgroup" data-type="horizontal" data-mini="true" style="max-width: 300px;">
+				
+				<input type="text" data-wrapper-class="controlgroupp-textinput ui-btn input-edit" maxlength="10"/>
+				<input type="submit"value="save" data-wrapper-class="controlgroupp-textinput btn-send"/>
+				
+			</form>
+			
+		</div>
+
+		<div data-role="popup" id="editprofile1"  style="margin: 0 10px 0 0;" >
+			
+			<form method="post" action="{echo DIR_PATH}/settings/profile" data-role="controlgroup" data-type="horizontal" data-mini="true" style="max-width: 300px;">
+				
+				<fieldset data-role="controlgroup" data-type="horizontal" data-corners="false">
+					<label for="on">On</label>
+					<input type="radio" name="status" id="on" value="On" class="ui-send" />
+					<label for="off">Off</label>
+					<input type="radio" name="status" id="off" value="Off" class="ui-send"/>
+					<input type="submit" value="Save" data-theme="a" />
+				</fieldset>
+				
+			</form>
+			
+		</div>
+
+    	<div id="profilesettings" data-role="main" class="ui-content">
+    		
+		    <h1>Profile Settings</h1>
+		    
+		    <ul data-role="listview" data-inset="true">
+
+		      <li data-icon="edit">
+		        <a href="#">
+		        <h2>Profession</h2>
+				<span class="ui-li-count">Student</span>
+		        </a>
+		     	<a href="#editprofile" data-rel="popup">Edit</a>
+		      </li>
+
+		      <li data-icon="edit">
+		        <a href="#">
+		        <h2>Username</h2>
+				<span class="ui-li-count">Michael</span>
+		        </a>
+		     	<a href="#editprofile" data-rel="popup">Edit</a>
+		      </li>
+
+		      <li data-icon="edit">
+		        <a href="#">
+		        <h2>Greeting</h2>
+				<span class="ui-li-count">Life is for living</span>
+		        </a>
+		     	<a href="#editprofile" data-rel="popup">Edit</a>
+		      </li>
+		      
+		      <li data-icon="edit">
+		        <a href="#">
+		        <h2>Clock app</h2>
+				<span class="ui-li-count">On</span>
+		        </a>
+		     	<a href="#editprofile1" data-rel="popup">Edit</a>
+		      </li>
+		      
+		      <li data-icon="edit">
+		        <a href="#">
+		        <h2>Weather app</h2>
+				<span class="ui-li-count">On</span>
+		        </a>
+		     	<a href="#editprofile1" data-rel="popup">Edit</a>
+		      </li>
+
+		      <li data-icon="edit">
+		        <a href="#">
+		        <h2>News app</h2>
+				<span class="ui-li-count">On</span>
+		        </a>
+		     	<a href="#editprofile1" data-rel="popup">Edit</a>
+		      </li>
+
+		      <li data-icon="edit">
+		        <a href="#">
+		        <h2>My like</h2>
+				<span class="ui-li-count">Football</span>
+		        </a>
+		     	<a href="#editprofile" data-rel="popup">Edit</a>
+		      </li>
+		      
+		      <li data-icon="edit">
+		        <a href="#">
+		        <h2>My like</h2>
+				<span class="ui-li-count">Cricket</span>
+		        </a>
+		     	<a href="#editprofile" data-rel="popup">Edit</a>
+		      </li>
+
+		      <li data-icon="edit">
+		        <a href="#">
+		        <h2>My Like</h2>
+				<span class="ui-li-count">Basketball</span>
+		        </a>
+		     	<a href="#editprofile" data-rel="popup">Edit</a>
+		      </li>
+
+		    </ul>
+
+    		
+    	</div>

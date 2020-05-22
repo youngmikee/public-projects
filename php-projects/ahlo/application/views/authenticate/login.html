@@ -1,0 +1,63 @@
+		<div data-role="header">
+			
+			<h1>AHLO!</h1>
+			
+		</div>	
+
+    	<div id="login" data-role="main" class="ui-content">
+
+    		
+			<div class="row">
+					
+	    		
+	    		{if isset($message)}
+	    		
+	    			<p>
+	    				{echo $message}
+	    			</p>
+	    		
+	    		{/if}
+					
+        		<form data-ajax="false" id="loginForm" method="post" action="{echo DIR_PATH}/authenticate/login">
+        			
+        			<ul>
+        				
+        				<li>
+        					<label for="email">Email:</label>
+        					<input type="text" name="email" data-corners="false" placeholder="John@mail.com"/>
+        				</li>
+        				
+        				<li>
+        					<label for=="pwd">Password:</label>
+        					<input type="password" name="pwd" data-corners="false" placeholder=""/>
+        				</li>
+        				
+        				<li>
+        					<input type="submit" value="Login"  data-corners="false"/>
+        				</li>
+        				
+        			</ul>
+        			
+        		</form>
+				
+			</div>
+    		
+  			<div class="row">
+  				
+  				<div class="info">
+  					
+  					<p>
+  						Dont have an account yet?
+  					</p>
+  					
+  				</div>
+  				
+  				<div class="registerBtn">
+  					
+  					<a href="register" class="ui-btn ui-btn-a">Register</a>
+  					
+  				</div>
+  				
+  			</div>
+    		
+    	</div>

@@ -1,0 +1,123 @@
+		<div data-role="header">
+			<a data-ajax="false" href="{echo DIR_PATH}/dashboard/logout" class="ui-btn ui-icon-power ui-nodisc-icon ui-btn-icon-notext">Logout</a>
+			<h1>
+				
+				{if isset($page) }
+					{echo $page}
+				{/if}
+				{else}
+					AHLOO!
+				{/else}
+			</h1>
+			<a href="#info" data-rel="popup" class="ui-btn ui-icon-info ui-nodisc-icon ui-btn-icon-notext">Info</a>
+		</div>	
+		
+		<div data-role="popup" id="info">
+			<p>Your account setup is almost complete.<br>
+				<b>Note:</b> You must complete and submit this form to activate your account!
+			</p>
+		</div>
+
+    	<div id="settings" data-role="main" class="ui-content">
+			
+	    		{if isset($message)}
+	    		
+	    			<p>
+	    				{echo $message}
+	    			</p>
+	    		
+	    		{/if}
+			
+			<div class="row">
+								
+				<form id="accountForm" method="post" action="{echo DIR_PATH}/settings">
+					
+					<ul>
+						
+						<li>
+							<label for="chatroom">Default chatroom:</label>
+							
+							<select name="chatroom" data-corners="false">
+								
+								{include england-cities.ini}
+								
+							</select>
+							
+						</li>
+						
+						<li>
+							<label for="firstname">Firstname:</label>
+							<input type="text" name="firstname" placeholder="West" data-corners="false" />
+						</li>
+						
+						<li>
+							<label for="lastname">Lastname:</label>
+							<input type="text" name="lastname" placeholder="Dow" data-corners="false" />
+						</li>
+						
+						<li>
+							<label for="dob">Date Of Birth:</label>
+							<fieldset data-role="controlgroup" data-type="horizontal" data-corners="false">
+								<select name="dob-day">
+									{include days.ini}
+								</select>
+								<select name="dob-month">
+									{include months.ini}
+								</select>
+								<select name="dob-year">
+									{include years.ini}
+								</select>
+							</fieldset>
+						</li>
+						
+						<li>
+							<label for="gender">Gender:</label>
+							<fieldset data-role="controlgroup" data-type="horizontal" data-corners="false">
+								<label for="male">Male</label>
+								<input type="radio" name="gender" id="male" value="male" />
+								<label for="female">Female</label>
+								<input type="radio" name="gender" id="female" value="female" />
+							</fieldset>
+						</li>
+						
+						<li>
+							<label for="country">Country:</label>
+							
+							<select name="country" data-corners="false">
+								
+								<option value="England">England</option>
+								
+							</select>
+							
+						</li>
+						
+						<li>
+							<label for="address">Address:</label>
+							<input type="text" name="address" data-corners="false" placeholder="No 10 Some Street" />
+						</li>
+						
+						<li>
+							<label for="postcode">Post Code:</label>
+							<input type="text" name="postcode" data-corners="false" placeholder="E15  _ _ _"/>
+						</li>
+						
+						<li>
+							<label for="city">City:</label>
+							<select name="city" data-corners="false">
+												
+								{include england-cities.ini}
+								
+							</select>
+						</li>
+						
+						<li>
+							<input data-theme="a" type="submit" value="Save" data-corners="false" />
+						</li>
+						
+					</ul>
+					
+				</form>
+				
+			</div>
+    		
+    	</div>

@@ -1,0 +1,53 @@
+		
+		<div data-role="header" >
+			<a data-ajax="false" href="{echo DIR_PATH}/dashboard" class="ui-nodisc-icon ui-btn ui-icon-home ui-btn-icon-notext">Home</a>
+			<h1>Messenger</h1>
+			<a href="#search" data-rel="popup" class="ui-nodisc-icon ui-btn ui-icon-search ui-btn-icon-notext">Search</a>
+		</div>	
+		
+		<div data-role="popup" id="search" data-corners="false" >
+			
+			<form data-role="controlgroup" data-type="horizontal" data-mini="true" >
+				
+				<input type="text" data-wrapper-class="controlgroupp-textinput ui-btn"/>
+				<input type="submit"value="Send" data-wrapper-class="controlgroupp-textinput btn-send"/>
+				
+			</form>
+			
+		</div>
+
+    	<div id="messenger" data-role="main" class="ui-content">
+    		
+    		<ul data-role="listview">
+    			
+    			<li>
+    				Choose a room
+    			</li>
+
+				<li>
+					<a data-ajax="false" href="{echo DIR_PATH}/messenger/room/birmingham" class="ui-btn ui-btn-a">Birmingham <span class="ui-li-count">25</span></a>
+				</li>   
+			
+				<li>
+					<a data-ajax="false" href="{echo DIR_PATH}/messenger/room/liverpool" class="ui-btn ui-btn-a">Liverpool <span class="ui-li-count">1</span></a>
+				</li>
+			
+				<li>
+					<a data-ajax="false" href="{echo DIR_PATH}/messenger/room/london" class="ui-btn ui-btn-a">London <span class="ui-li-count">29</span></a>
+				</li>
+			
+				<li>
+					<a data-ajax="false" href="{echo DIR_PATH}/messenger/room/manchester" class="ui-btn ui-btn-a">Manchester <span class="ui-li-count">0</span></a>
+				</li>
+				
+				<li>
+					<a data-ajax="false" href="{echo DIR_PATH}/messenger/room/newcastle" class="ui-btn ui-btn-a">Newcastle <span class="ui-li-count">5</span></a>
+				</li> 
+			
+				<li>
+					<a data-ajax="false" href="{echo DIR_PATH}/messenger/room/a-z" class="ui-btn ui-btn-a">A-Z <span class="ui-li-count">245</span></a>
+				</li> 		
+			
+			</ul>	
+
+    	</div>
