@@ -1,0 +1,467 @@
+body{
+	
+}
+
+#result{
+	width: 80%;
+	margin: 0 auto;
+	background-image: url('photo/blue.jpg');
+}
+
+#index .container,
+#login .container,
+#register .container,
+#admin .container,
+#result .container{
+	width: 100%;
+	min-width: 960px;
+	height: auto;
+	margin: 0 auto;
+	//border: solid 1px #aaa;
+}
+
+#index .container header,
+#login .container header,
+#register .container header,
+#admin .container header,
+#result .container header{
+	width: 100%;
+	height: 50px;
+	//border: solid 1px #aaa;
+}
+
+#index .container h3,
+#login .container h3,
+#register .container h3,
+#admin .container h3{
+	display: block;
+	float: left;
+	font-family: Geneva;
+	//border: solid 1px #aaa;
+	margin: 15px 0 0 20px;
+}
+
+#result .container h3{
+	//display: block;
+	float: left;
+	font-family: Geneva;
+	//border: solid 1px #aaa;
+	margin: 15px 0 0 20px;
+}
+
+#result .container .search,
+#admin .container .search{
+	text-align: center;
+	background: #fff;
+}
+
+#result .container .search form,
+#admin .container .search form{
+	display: table;
+	width: 90%;
+	margin: auto;
+	text-align: center;
+	//border: solid 1px #aaa;
+	background: #fff;
+	padding: 5px 0 0 0;
+}
+
+#result .container .search form span,
+#admin .container .search form span{
+	display: table-cell;
+}
+
+#result .container .search form .course,
+#admin .container .search form .course{
+	display: table-cell;
+	//border: solid 1px #aaa;
+}
+
+#result .container .search form .course input,
+#admin .container .search form .course input{
+	padding: 0 0 0 10px
+}
+
+#result .container .search form .course input,
+#result .container .search form .location select,
+#admin .container .search form .course input,
+#admin .container .search form .location select{
+	width: 97%;
+	height: 35px;
+	margin: 2px 0 5px 0;
+}
+
+#result .container .search form .location,
+#admin .container .search form .location{
+	display: table-cell;
+}
+
+#result .container .search form .submit,
+#admin .container .search form .submit{
+	height: 35px;
+	width: 100px;
+	border: none;
+	background: #333385;
+	color: #fff;
+}
+
+#result .container header nav{
+	//border: solid 1px #aaa;
+	float: right;
+	height: 50px;
+	width: 40%;
+	min-width: 150px;
+	text-align: center;
+}
+
+#result .container header nav ul .survey a{
+	color: #333385;
+}
+
+#index .container h3 a,
+#login .container h3 a,
+#register .container h3 a,
+#admin .container h3 a,
+#result .container h3 a{
+	color: #555;
+	//border: solid 1px #990000;
+	//background: #990000;
+	text-decoration: none;
+	padding: 0 5px 0 5px;
+}
+
+#index .container header nav{
+	//border: solid 1px #aaa;
+	float: right;
+	height: 50px;
+	//width: 300px;
+	text-align: center;
+}
+
+#index .container header nav .big{
+	//border: solid 1px #aaa;
+}
+
+#index .container header nav .big a{
+	//border: solid 1px #aaa;
+	//width: none;
+	padding: 0 5px 0 5px;
+	color: #990000;
+}
+
+#login .container header nav,
+#register .container header nav,
+#admin .container header nav{
+	//border: solid 1px #aaa;
+	float: right;
+	height: 50px;
+	width: 300px;
+	text-align: center;
+}
+
+#index .container header nav ul,
+#login .container header nav ul,
+#register .container header nav ul,
+#admin .container header nav ul,
+#result .container header nav ul{
+	list-style-type: none;
+}
+
+#index .container header nav ul li,
+#login .container header nav ul li,
+#register .container header nav ul li,
+#admin .container header nav ul li,
+#result .container header nav ul li{
+	display: inline;
+}
+
+#index .container header nav ul li a,
+#login .container header nav ul li a,
+#register .container header nav ul li a,
+#admin .container header nav ul li a,
+#result .container header nav ul li a{
+	//border: solid 1px black;
+	padding: 5px 20px 5px 20px;
+	color: #555;
+	text-decoration: none;
+}
+
+#index .container .body{
+	//height: 800px;
+	width: 100%;
+	text-align: center;
+	border: solid 1px #fff;
+}
+
+#login .container .body,
+#register .container .body,
+#admin .container .body{
+	height: 600px;
+	width: 100%;
+	padding: 50px 0 0 0;
+	border: solid 1px #aaa;
+}
+
+#result .container .body{
+	//height: 600px;
+	width: 100%;
+	padding: 50px 0 0 0;
+	//border: solid 1px #aaa;
+}
+
+#index .container .body h1{
+	border: solid 1px #fff;
+	height: 250px;
+	font-size: 80px;
+	font-family: Georgia;
+	line-height: 400px;
+	margin: 0px;
+	color: #990000;
+}
+
+#index .container .body .search{
+	//border: solid 1px #aaa;
+}
+
+#index .container .body .search form{
+	display: table;
+	width: 80%;
+	//height: 60px;
+	margin: 0 auto;
+	padding: 5px;
+	border: solid 1px #aaa;
+}
+
+#index .container .body .search form span{
+	display: table-cell;
+	width: 10%;
+	//border: solid 1px #aaa;
+}
+
+#index .container .body .search form .input-wrapper{
+	display: table-cell;
+	//border: solid 1px #aaa;
+}
+
+#index .container .body .search form input,
+#index .container .body .search form select{
+	width: 96%;
+	height: 50px;
+	padding: 0 0 0 10px;
+	font-size: 20px;
+}
+
+#index .container .body .search form .course{
+	width: 40%;
+	//background: red;
+}
+
+#index .container .body .search form .location{
+	width: 25%;
+	//background: blue;
+}
+
+#index .container .body .search form .submit{
+	width: 90%;
+	min-width: 100px;
+	height: 50px;
+}
+
+#index .container .body .menu,
+#result .container .search .menu,
+#admin .container .search .menu{
+ 	border: solid 1px #fff;
+	width: 80%;
+	height: auto;
+	margin: 0 auto;
+}
+
+#index .container .body .menu span{
+	//border: solid 1px #aaa;
+	display: block;
+	height: 35px;
+	line-height: 45px;
+	color: #555;
+	font-size: 20px;
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+}
+
+#index .container .body .menu ul,
+#result .container .search .menu ul,
+#admin .container .search .menu ul{
+	//border: solid 1px #aaa;
+}
+
+#index .container .body .menu ul li,
+#result .container .search .menu ul li,
+#admin .container .search .menu ul li{
+	display: inline;
+}
+
+#index .container .body .menu ul li a,
+#result .container .search .menu ul li a,
+#admin .container .search .menu ul li a{
+	//border: solid 1px #aaa;
+	padding: 10px 20px 0 20px;
+	color: #333385;
+	text-align: center;
+}
+
+#index .container .body #history{
+	height: 400px;
+	margin: 100px 0 0 0;
+	border: solid 1px #aaa;
+	
+}
+
+#login .container .body .content,
+#register .container .body .content,
+#admin .container .body .content{
+	//width: 80%;
+	//height: 500px;
+	margin: 0 auto;
+	//border: solid 1px #aaa;
+}
+
+#login .container .body .content .left,
+#register .container .body .content .left,
+#admin .container .body .content .left{
+	float: left;
+	width: 30%;
+	height: 500px;
+	//border: solid 1px #aaa;
+}
+
+#login .container .body .content .left form,
+#register .container .body .content .left form,
+#admin .container .body .content .left form{
+	border: solid 1px #aaa;
+	padding: 20px;
+}
+
+#login .container .body .content .left form h3,
+#register .container .body .content .left form h3,
+#admin .container .body .content .left form h3{
+	display: block;
+	width: 100%;
+	font-size: 30px;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #990000;
+	margin: 0 0 20px 0;
+}
+
+#login .container .body .content .left form span,
+#register .container .body .content .left form span,
+#admin .container .body .content .left form span{
+	display: block;
+}
+
+#login .container .body .content .left form .input-wrapper,
+#register .container .body .content .left form .input-wrapper,
+#admin .container .body .content .left form .input-wrapper{
+	width: 50%;
+	height: 45px;
+	//border: solid 1px #aaa;
+	margin: 0 0 20px 0;
+}
+
+#login .container .body .content .left form .input-wrapper input,
+#register .container .body .content .left form .input-wrapper input,
+#admin .container .body .content .left form .input-wrapper input{
+	width: 97%;
+	height: 37px;
+	padding: 0 0 0 10px;
+}
+
+#login .container .body .content .left form .btn,
+#register .container .body .content .left form .btn,
+#admin .container .body .content .left form .btn{
+	height: 45px;
+	width: 100px;
+}
+
+#login .container .body .content .right,
+#register .container .body .content .right,
+#admin .container .body .content .right{
+	
+}
+
+#result .container .search{
+	//height: 150px;
+	width: 100%;
+	padding: 30px 0 0 0;
+	//border: solid 1px #aaa;
+}
+
+#result .container .body{
+	//background: #ccc;
+	border: solid 1px #aaa;
+	padding: 0px;
+}
+
+#result .container .body .content{
+	margin: 0px;
+	width: 600px;
+	min-height: 800px;
+	margin: auto;
+	border: solid 1px #aaa;
+	background: #fff;
+}
+
+#result .container .body .content h1{
+	//border: solid 1px #aaa;
+	padding: 0 0 0 10px;
+}
+
+#result .container .body .content table{
+	//background: #ccc;
+	padding: 10px;
+	width: 100%;
+	height: 200px;
+	border-top: solid 1px #aaa;
+	border-bottom: solid 1px #aaa;
+}
+
+#result .container .body .content table tr td .website{
+	display: block;
+	float: left;
+}
+
+#result .container .body .content table tr td .website a,
+#result .container .body .content table tr td .email a{
+	border: solid 1px #aaa;
+	text-decoration: none;
+	padding: 10px;
+	color: #990000;
+}
+
+#result .container .body .content table tr td .email{
+	display: block;
+	float: right;
+}
+
+#result .container .body .content table tr td div{
+	margin: 10px 0 10px 0;
+}
+
+
+.error{
+	color: red;
+	font-style: italic;
+	padding: 0 0 20px 0;
+}
+
+
+#index footer{
+	width: 100%;
+	height: 50px;
+	margin-top: 100px;
+	text-align: center;
+}
+
+#result footer .bottombtn a{
+	padding: 0 20px 0 0;
+}
+
+
+
